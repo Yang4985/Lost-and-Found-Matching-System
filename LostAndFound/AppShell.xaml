@@ -9,19 +9,31 @@
     Title="LostAndFound">
 
     <ShellContent
-        Title="Dashboard"
+        Title="Lost Reports"
         Icon="{StaticResource IconDashboard}"
-        ContentTemplate="{DataTemplate pages:MainPage}"
-        Route="main" />
+        ContentTemplate="{DataTemplate pages:LostReportPage}"
+        Route="lost-reports" />
 
     <ShellContent
-        Title="Projects"
+        Title="Found Reports"
+        Icon="{StaticResource IconProjects}"
+        ContentTemplate="{DataTemplate pages:FoundReportPage}"
+        Route="found-reports" />
+
+    <ShellContent
+        Title="Possible Matches"
+        Icon="{StaticResource IconMeta}"
+        ContentTemplate="{DataTemplate pages:MatchesPage}"
+        Route="matches" />
+
+    <ShellContent
+        Title="Prototype Data"
         Icon="{StaticResource IconProjects}"
         ContentTemplate="{DataTemplate pages:ProjectListPage}"
         Route="projects" />
 
     <ShellContent
-        Title="Manage Meta"
+        Title="Sample Settings"
         Icon="{StaticResource IconMeta}"
         ContentTemplate="{DataTemplate pages:ManageMetaPage}"
         Route="manage" />

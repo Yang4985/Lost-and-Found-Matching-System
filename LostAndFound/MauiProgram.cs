@@ -49,6 +49,10 @@ namespace LostAndFound
             builder.Services.AddSingleton<TagRepository>();
             builder.Services.AddSingleton<SeedDataService>();
             builder.Services.AddSingleton<ModalErrorHandler>();
+            builder.Services.AddSingleton<PrototypeDataService>();
+            builder.Services.AddTransient<LostReportPage>();
+            builder.Services.AddTransient<FoundReportPage>();
+            builder.Services.AddTransient<MatchesPage>();
             builder.Services.AddSingleton<MainPageModel>();
             builder.Services.AddSingleton<ProjectListPageModel>();
             builder.Services.AddSingleton<ManageMetaPageModel>();
