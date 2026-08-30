@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace LostAndFound.Models
 {
-    internal class FoundItemReport
+    public class FoundItemReport : Item
     {
+        public DateTime DateFound { get; set; }
+        public string StorageLocation { get; set; } = string.Empty;
+        public int RegisteredByStaffID { get; set; }
     }
 }
