@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+             x:Class="LostAndFound.Pages.FoundReportPage"
+             Title="Found Reports">
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="14">
+            <Label Text="Register a found item" Style="{StaticResource Headline}" />
+            <Label Text="This prototype treats this page as a staff function." />
+
+            <Entry x:Name="ItemNameEntry" Placeholder="Item name *" />
+            <Picker x:Name="CategoryPicker" Title="Category *" />
+            <Entry x:Name="LocationEntry" Placeholder="Location found *" />
+            <DatePicker x:Name="FoundDatePicker" MaximumDate="{x:Static sys:DateTime.Today}" />
+            <Editor x:Name="DescriptionEditor" Placeholder="Description *" AutoSize="TextChanges" MinimumHeightRequest="90" />
+            <Entry x:Name="StorageEntry" Placeholder="Storage location *" />
+            <Label x:Name="ValidationLabel" TextColor="#C62828" IsVisible="False" />
+            <Button Text="Save found report" Clicked="OnSaveClicked" />
+
+            <Label Text="Registered found items" Style="{StaticResource SubHeadline}" Margin="0,20,0,0" />
+            <CollectionView x:Name="ReportsView" MinimumHeightRequest="280">
+                <CollectionView.EmptyView>
+                    <Label Text="No found items have been registered." HorizontalOptions="Center" />
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Padding="14" Margin="0,5" StrokeShape="RoundRectangle 10">
+                            <VerticalStackLayout Spacing="4">
+                                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="18" />
+                                <Label Text="{Binding Category, StringFormat='Category: {0}'}" />
+                                <Label Text="{Binding Location, StringFormat='Found at: {0}'}" />
+                                <Label Text="{Binding StorageLocation, StringFormat='Stored at: {0}'}" />
+                                <Label Text="{Binding Status, StringFormat='Status: {0}'}" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

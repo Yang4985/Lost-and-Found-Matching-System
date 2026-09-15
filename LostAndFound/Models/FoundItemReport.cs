@@ -1,3 +1,4 @@
+
 ﻿
 
 namespace LostAndFound.Models
@@ -21,5 +22,14 @@ namespace LostAndFound.Models
         public string Status { get; set; } = "Available";
 
         public DateTime DateReported { get; set; } = DateTime.Now;
+
+namespace LostAndFound.Models
+{
+    public class FoundItemReport : Item
+    {
+        public DateTime DateFound { get; set; }
+        public string StorageLocation { get; set; } = string.Empty;
+        public int RegisteredByStaffID { get; set; }
+
     }
 }

@@ -20,5 +20,14 @@ namespace LostAndFound.Models
         public string Status { get; set; } = "Open";
 
         public DateTime DateReported { get; set; } = DateTime.Now;
+
+namespace LostAndFound.Models
+{
+    public class LostItemReport : Item
+    {
+        public DateTime DateLost { get; set; }
+        public string DistinguishingFeatures { get; set; } = string.Empty;
+        public int ReportedByStudentID { get; set; }
+
     }
 }

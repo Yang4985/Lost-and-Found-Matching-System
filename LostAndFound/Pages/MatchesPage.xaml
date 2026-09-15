@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LostAndFound.Pages.MatchesPage"
+             Title="Matches">
+    <Grid Padding="24" RowDefinitions="Auto,Auto,*" RowSpacing="16">
+        <VerticalStackLayout Grid.Row="0" Spacing="6">
+            <Label Text="Possible matches" Style="{StaticResource Headline}" />
+            <Label Text="Scores compare category, location, description keywords, and dates. Staff must review the result." />
+        </VerticalStackLayout>
+        <Button Grid.Row="1" Text="Refresh match results" Clicked="OnRefreshClicked" />
+        <CollectionView Grid.Row="2" x:Name="MatchesView">
+            <CollectionView.EmptyView>
+                <Label Text="Add lost and found reports, then refresh the results." HorizontalOptions="Center" />
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="16" Margin="0,6" StrokeShape="RoundRectangle 10">
+                        <VerticalStackLayout Spacing="6">
+                            <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="18" />
+                            <Label Text="{Binding ScoreText}" TextColor="#1976D2" FontAttributes="Bold" />
+                            <Label Text="{Binding Explanation}" />
+                            <Label Text="Prototype suggestion only — staff review required" FontAttributes="Italic" />
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
