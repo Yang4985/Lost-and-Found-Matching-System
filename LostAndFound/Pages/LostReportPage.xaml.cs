@@ -32,7 +32,7 @@ namespace LostAndFound.Pages
                 Name = ItemNameEntry.Text.Trim(),
                 Category = CategoryPicker.SelectedItem.ToString()!,
                 Location = LocationEntry.Text.Trim(),
-                DateLost = LostDatePicker.Date,
+                DateLost = LostDatePicker.Date ?? DateTime.Today,
                 Description = DescriptionEditor.Text.Trim(),
                 DistinguishingFeatures = FeaturesEntry.Text?.Trim() ?? string.Empty,
                 ReportedByStudentID = 1
