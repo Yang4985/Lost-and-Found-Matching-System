@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <IsTestProject>true</IsTestProject><IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+    <PackageReference Include="MSTest.TestAdapter" Version="4.0.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="4.0.2" />
+    <!-- Compile the actual production source, not a rewritten test double.
+         This verifies core logic only; it is not a MAUI application build. -->
+    <Compile Include="../LostAndFound/Models/Item.cs" Link="Production/Item.cs" />
+    <Compile Include="../LostAndFound/Models/ItemReportStatus.cs" Link="Production/ItemReportStatus.cs" />
+    <Compile Include="../LostAndFound/Models/LostItemReport.cs" Link="Production/LostItemReport.cs" />
+    <Compile Include="../LostAndFound/Models/FoundItemReport.cs" Link="Production/FoundItemReport.cs" />
+    <Compile Include="../LostAndFound/Services/MatchingService.cs" Link="Production/MatchingService.cs" />
+    <Compile Include="../LostAndFound/Services/PrototypeDataService.cs" Link="Production/PrototypeDataService.cs" />
+  </ItemGroup>
+</Project>
