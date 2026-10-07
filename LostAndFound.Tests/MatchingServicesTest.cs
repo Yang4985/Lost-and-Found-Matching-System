@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
-using LostAndFound.Models;
-using LostAndFound.Services;
+using LostAndFound.Core.Models;
+using LostAndFound.Core.Services;
 
 namespace LostAndFound.Tests
 {

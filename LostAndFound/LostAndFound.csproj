@@ -83,5 +83,8 @@
 	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
 		<PackageReference Include="SQLitePCLRaw.lib.e_sqlite3.android" Version="2.1.12-pre20260709125052" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\LostAndFound.Core\LostAndFound.Core.csproj" />
+	</ItemGroup>
 	
 </Project>
