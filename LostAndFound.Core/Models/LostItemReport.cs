@@ -1,4 +1,4 @@
-﻿namespace LostAndFound.Models
+﻿namespace LostAndFound.Core.Models
 {
     public class LostItemReport
     {

@@ -73,8 +73,18 @@
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
 		<PackageReference Include="CommunityToolkit.Maui" Version="12.3.0" />
 		<PackageReference Include="Microsoft.Data.Sqlite.Core" Version="8.0.8" />
-		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.10" />
+		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.11" />
+		<!-- Pin native provider to a patched SQLitePCLRaw.lib.e_sqlite3 prerelease that resolves GHSA-2m69-gcr7-jv3q -->
+		<PackageReference Include="SQLitePCLRaw.lib.e_sqlite3" Version="2.1.12-pre20260709125052" />
 		<PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.0.8" />
+	</ItemGroup>
+
+	<!-- Pin platform-specific native SQLite provider for Android to resolve vulnerability -->
+	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
+		<PackageReference Include="SQLitePCLRaw.lib.e_sqlite3.android" Version="2.1.12-pre20260709125052" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\LostAndFound.Core\LostAndFound.Core.csproj" />
 	</ItemGroup>
 	
 </Project>

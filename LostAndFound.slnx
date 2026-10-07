@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="LostAndFound.Core/LostAndFound.Core.csproj" Id="8f77e1cc-051d-4fa3-9bb5-ce48c075d824" />
+  <Project Path="LostAndFound.Tests/LostAndFound.Tests.csproj" Id="12502d0a-8fc4-44da-abdf-4bbcfa4e25af" />
   <Project Path="LostAndFound/LostAndFound.csproj" />
 </Solution>

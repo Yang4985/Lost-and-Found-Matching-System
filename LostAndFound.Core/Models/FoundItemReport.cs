@@ -1,22 +1,20 @@
-﻿namespace LostAndFound.Models
+namespace LostAndFound.Core.Models
 {
-    public class LostItemReport
+    public class FoundItemReport
     {
         public int ReportId { get; set; }
 
         public Item Item { get; set; } = new Item();
 
-        public DateTime DateLost { get; set; }
+        public DateTime DateFound { get; set; }
 
-        public TimeSpan? ApproximateTimeLost { get; set; }
+        public TimeSpan? ApproximateTimeFound { get; set; }
 
-        public string LocationLost { get; set; } = string.Empty;
+        public string LocationFound { get; set; } = string.Empty;
 
-        public string ReporterName { get; set; } = string.Empty;
+        public string StorageLocation { get; set; } = string.Empty;
 
-        public string ContactEmail { get; set; } = string.Empty;
-
-        public int ReportedByStudentID { get; set; }
+        public int RegisteredByStaffID { get; set; }
 
         public ItemReportStatus Status { get; set; }
             = ItemReportStatus.Submitted;
@@ -24,8 +22,7 @@
         public DateTime DateReported { get; set; }
             = DateTime.Now;
 
-
-        // Compatibility properties for existing code
+        // Compatibility properties for existing project code
 
         public int ID
         {
@@ -53,8 +50,8 @@
 
         public string Location
         {
-            get => LocationLost;
-            set => LocationLost = value;
+            get => LocationFound;
+            set => LocationFound = value;
         }
 
         public string DistinguishingFeatures

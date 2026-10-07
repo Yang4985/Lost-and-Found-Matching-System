@@ -28,16 +28,25 @@ namespace LostAndFound.Pages
                 return;
             }
 
+            try
+            {
             _data.AddFoundReport(new FoundItemReport
             {
+                Item = new Item { Brand = BrandEntry.Text?.Trim() ?? string.Empty, Color = ColourEntry.Text?.Trim() ?? string.Empty },
                 Name = ItemNameEntry.Text.Trim(),
                 Category = CategoryPicker.SelectedItem.ToString()!,
                 Location = LocationEntry.Text.Trim(),
-                DateFound = FoundDatePicker.Date,
+                DateFound = FoundDatePicker.Date ?? DateTime.Today,
                 Description = DescriptionEditor.Text.Trim(),
                 StorageLocation = StorageEntry.Text.Trim(),
                 RegisteredByStaffID = 1
             });
+            }
+            catch (Exception error) when (error is IOException or UnauthorizedAccessException)
+            {
+                await DisplayAlertAsync("Unable to save", "Your report could not be saved. Please retry. Your form has been kept.", "OK");
+                return;
+            }
 
             ClearForm();
             await DisplayAlertAsync("Item registered", "The found item was added and is ready for matching.", "OK");
@@ -46,6 +55,8 @@ namespace LostAndFound.Pages
         private void ClearForm()
         {
             ItemNameEntry.Text = string.Empty;
+            BrandEntry.Text = string.Empty;
+            ColourEntry.Text = string.Empty;
             CategoryPicker.SelectedIndex = -1;
             LocationEntry.Text = string.Empty;
             DescriptionEditor.Text = string.Empty;
