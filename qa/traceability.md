@@ -1,3 +1,5 @@
+> Historical baseline documentation. For the current repair and retest status, see [fix-verification.md](fix-verification.md). Baseline failures remain preserved as before-fix evidence.
+
 # Requirements traceability and remaining verification
 
 Source: existing requirements-and-prototype.md. IDs retain the team's FR numbering. These are partial verification links, not claims of final compliance.

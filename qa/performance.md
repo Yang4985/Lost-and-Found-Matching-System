@@ -1,3 +1,5 @@
+> Historical baseline documentation. For the current repair and retest status, see [fix-verification.md](fix-verification.md). Baseline failures remain preserved as before-fix evidence.
+
 # Q01 Service performance baseline
 
 Measured against the production PrototypeDataService used by MatchesPage, on the QA baseline descended from commit 27362e4. Full per-run timings and runtime metadata: evidence/performance.json. Harness: QA.Performance/Program.cs. AI assistance: OpenAI Codex; no Copilot usage claimed.

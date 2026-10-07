@@ -174,8 +174,8 @@ public class MatchingTests
         Assert.HasCount(1, data.LostReports); Assert.HasCount(1, data.FoundReports);
     }
 
-    // These are deliberate acceptance failures for OPEN defects, not skipped tests.
-    [TestMethod, TestCategory("OpenDefect")]
+    // Original defect acceptance assertions remain active as regression checks.
+    [TestMethod, TestCategory("Regression")]
     public void TC16_D001_UIAndCore_UseSameCategoryExclusion()
     {
         var data = Empty(); var lost = Lost(); var found = Found(); found.Category = "Wallet";
@@ -184,7 +184,7 @@ public class MatchingTests
         Assert.HasCount(0, data.GenerateMatches(), "D001: UI still recommends a different-category item.");
     }
 
-    [TestMethod, TestCategory("OpenDefect")]
+    [TestMethod, TestCategory("Regression")]
     public void TC17_D002_ReturnedFoundItem_IsNotAvailableForMatching()
     {
         var data = Empty(); var found = Found();
@@ -192,13 +192,18 @@ public class MatchingTests
         Assert.HasCount(0, data.GenerateMatches(), "D002: Returned item remains a candidate.");
     }
 
-    [TestMethod, TestCategory("OpenDefect")]
+    [TestMethod, TestCategory("Regression")]
     public void TC18_D003_RecreatedService_RetainsSavedReport()
     {
-        var data = Empty(); var lost = Lost(); lost.Name = "QA-PERSISTENCE-UNIQUE-2026";
-        data.AddLostReport(lost);
-        var recreated = new PrototypeDataService();
-        Assert.IsTrue(recreated.LostReports.Any(r => r.Name == lost.Name), "D003: Registered report is not persistent.");
+        var path = Path.Combine(Path.GetTempPath(), Guid.NewGuid() + ".json");
+        try
+        {
+            var data = new PrototypeDataService(path); var lost = Lost(); lost.Name = "QA-PERSISTENCE-UNIQUE-2026";
+            data.AddLostReport(lost);
+            var recreated = new PrototypeDataService(path);
+            Assert.IsTrue(recreated.LostReports.Any(r => r.Name == lost.Name), "D003: Registered report is not persistent.");
+        }
+        finally { if (File.Exists(path)) File.Delete(path); }
     }
 }
 

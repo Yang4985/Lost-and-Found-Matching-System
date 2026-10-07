@@ -4,6 +4,17 @@ namespace LostAndFound.Services
 {
     public class MatchingService
     {
+        public string ExplainMatch(LostItemReport lost, FoundItemReport found)
+        {
+            if (CalculateMatchScore(lost, found) == 0) return "Not a candidate";
+            var reasons = new List<string> { "same category (+30)" };
+            if (TextMatches(lost.Item.GetBrand(), found.Item.GetBrand())) reasons.Add("same brand (+15)");
+            if (TextMatches(lost.Item.GetColor(), found.Item.GetColor())) reasons.Add("same colour (+15)");
+            if (TextMatches(lost.LocationLost, found.LocationFound)) reasons.Add("same location (+15)");
+            if (Math.Abs((lost.DateLost.Date - found.DateFound.Date).Days) <= 1) reasons.Add("dates within one day (+15)");
+            if (DescriptionsAreSimilar(lost.Description, found.Description)) reasons.Add("shared description word (+10)");
+            return string.Join("; ", reasons);
+        }
         public int CalculateMatchScore(
             LostItemReport lostReport,
             FoundItemReport foundReport)
@@ -125,11 +136,11 @@ namespace LostAndFound.Services
             }
 
             string[] lostWords = lostDescription
-                .ToLower()
+                .ToLowerInvariant()
                 .Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
             string[] foundWords = foundDescription
-                .ToLower()
+                .ToLowerInvariant()
                 .Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
             foreach (string lostWord in lostWords)

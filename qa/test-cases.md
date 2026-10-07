@@ -1,3 +1,5 @@
+> Historical baseline documentation. For the current repair and retest status, see [fix-verification.md](fix-verification.md). Baseline failures remain preserved as before-fix evidence.
+
 # Executable test catalogue
 
 Common preconditions: .NET 10, restored QA.Tests dependencies, isolated new objects per case. Run command is in qa/README.md. Default fixture: Electronics, Samsung, Galaxy, black cracked screen, Black, scratch; Library; 2026-10-01. PrototypeDataService seed collections are cleared for isolation. Tests do not execute XAML/UI actions.

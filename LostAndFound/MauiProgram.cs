@@ -49,7 +49,8 @@ namespace LostAndFound
             builder.Services.AddSingleton<TagRepository>();
             builder.Services.AddSingleton<SeedDataService>();
             builder.Services.AddSingleton<ModalErrorHandler>();
-            builder.Services.AddSingleton<PrototypeDataService>();
+            builder.Services.AddSingleton<PrototypeDataService>(_ => new PrototypeDataService(
+                Path.Combine(FileSystem.AppDataDirectory, "lost-found-reports.json")));
             builder.Services.AddTransient<LostReportPage>();
             builder.Services.AddTransient<FoundReportPage>();
             builder.Services.AddTransient<MatchesPage>();

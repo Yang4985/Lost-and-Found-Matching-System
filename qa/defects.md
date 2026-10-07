@@ -1,3 +1,5 @@
+> Historical baseline documentation. For the current repair and retest status, see [fix-verification.md](fix-verification.md). Baseline failures remain preserved as before-fix evidence.
+
 # Defect register and root cause analysis
 
 All defects below are OPEN at the baseline commit. Discovery: local automated service tests on 7 October 2026. Owner assignments are proposed for team confirmation, not completed assignments.

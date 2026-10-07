@@ -42,7 +42,7 @@ var report=new {
     lostReports=1, foundReports=1000, p50Milliseconds=percentile(.5), p95Milliseconds=percentile(.95),
     maxMilliseconds=sorted[^1], meanMilliseconds=timings.Average(),
     referenceThresholdMilliseconds=2000, allServiceRunsWithinReference=sorted[^1]<=2000,
-    limitation="Service-only reference comparison; does not verify end-to-end 2-second NFR, device-independent performance or matching correctness. Existing defects remain open.", samples
+    limitation="Service-only reference comparison; does not verify end-to-end 2-second NFR, device-independent performance or matching correctness. D001-D003 service regression fixes are tested separately; UI release readiness is not established.", samples
 };
 string output=args.Length>0?args[0]:"qa/evidence/performance.json";
 Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(output))!);

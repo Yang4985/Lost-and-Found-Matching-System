@@ -6,5 +6,6 @@
     <Compile Include="../LostAndFound/Models/LostItemReport.cs" />
     <Compile Include="../LostAndFound/Models/FoundItemReport.cs" />
     <Compile Include="../LostAndFound/Services/PrototypeDataService.cs" />
+    <Compile Include="../LostAndFound/Services/MatchingService.cs" />
   </ItemGroup>
 </Project>

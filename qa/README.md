@@ -1,3 +1,5 @@
+> Historical baseline documentation. For the current repair and retest status, see [fix-verification.md](fix-verification.md). Baseline failures remain preserved as before-fix evidence.
+
 # Member 3 QA baseline
 
 This is a development baseline, not a final submission or release approval.
