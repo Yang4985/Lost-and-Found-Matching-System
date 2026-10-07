@@ -9,6 +9,14 @@ namespace LostAndFound.Models
         private string color;
         private string distinguishingFeatures;
 
+        // Serializable properties retain all matching fields across app restarts.
+        public string Category { get => category; set => category = value; }
+        public string Brand { get => brand; set => brand = value; }
+        public string Name { get => name; set => name = value; }
+        public string Description { get => description; set => description = value; }
+        public string Color { get => color; set => color = value; }
+        public string DistinguishingFeatures { get => distinguishingFeatures; set => distinguishingFeatures = value; }
+
         // Default constructor
         public Item()
         {

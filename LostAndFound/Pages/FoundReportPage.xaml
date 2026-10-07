@@ -11,6 +11,8 @@
 
             <Entry x:Name="ItemNameEntry" Placeholder="Item name *" />
             <Picker x:Name="CategoryPicker" Title="Category *" />
+            <Entry x:Name="BrandEntry" Placeholder="Brand (optional)" />
+            <Entry x:Name="ColourEntry" Placeholder="Colour (optional)" />
             <Entry x:Name="LocationEntry" Placeholder="Location found *" />
             <DatePicker x:Name="FoundDatePicker" MaximumDate="{x:Static sys:DateTime.Today}" />
             <Editor x:Name="DescriptionEditor" Placeholder="Description *" AutoSize="TextChanges" MinimumHeightRequest="90" />
