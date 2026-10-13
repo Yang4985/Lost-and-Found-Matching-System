@@ -56,7 +56,37 @@ public class PrototypeDataService
             catch { FoundReports.Remove(report); throw; }
         }
     }
+    public void MarkFoundReportReturned(int reportId)
+    {
+        lock (_gate)
+        {
+            var report = FoundReports
+                .FirstOrDefault(r => r.ID == reportId);
 
+            if (report is null)
+            {
+                throw new InvalidOperationException(
+                    $"Found report {reportId} could not be found.");
+            }
+
+            var previousStatus = report.Status;
+            var previousReturnedAt = report.ReturnedAt;
+
+            report.Status = ItemReportStatus.Returned;
+            report.ReturnedAt = DateTime.UtcNow;
+
+            try
+            {
+                Save();
+            }
+            catch
+            {
+                report.Status = previousStatus;
+                report.ReturnedAt = previousReturnedAt;
+                throw;
+            }
+        }
+    }
     // Call after changing existing reports. One app instance owns this local snapshot.
     public void Save()
     {

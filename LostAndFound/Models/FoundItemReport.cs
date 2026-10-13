@@ -22,6 +22,9 @@ namespace LostAndFound.Models
         public DateTime DateReported { get; set; }
             = DateTime.Now;
 
+        public DateTime? ReturnedAt { get; set; }
+
+
         // Compatibility properties for existing project code
 
         public int ID
