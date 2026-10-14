@@ -18,6 +18,9 @@ namespace LostAndFound.Pages
 
         private readonly HashSet<int> _selectedForReturn = new();
 
+        private readonly ObservableCollection<FoundItemReport> 
+            _publicSubmissions = new();
+
 
         public FoundReportPage(PrototypeDataService data)
         {
@@ -35,6 +38,7 @@ namespace LostAndFound.Pages
                 "Other"
             };
 
+            PublicSubmissionsView.ItemsSource = _publicSubmissions;
             AvailableReportsView.ItemsSource = _availableReports;
             ReturnedReportsView.ItemsSource = _returnedReports;
 
@@ -42,9 +46,22 @@ namespace LostAndFound.Pages
         }
 
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
+
+            if (!StaffSessionService.IsAuthenticated)
+            {
+                await DisplayAlertAsync(
+                    "Staff Access Required",
+                    "Please sign in with an authorised staff account.",
+                    "OK");
+
+                await Shell.Current.GoToAsync(
+                    "//staff-login");
+
+                return;
+            }
 
             RefreshReportLists();
         }
@@ -240,9 +257,15 @@ namespace LostAndFound.Pages
                 "OK");
         }
 
-
+        private async void OnBackToDashboardClicked(
+    object? sender,
+    EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//staff-dashboard");
+        }
         private void RefreshReportLists()
         {
+            _publicSubmissions.Clear();
             _availableReports.Clear();
             _returnedReports.Clear();
 
@@ -254,6 +277,14 @@ namespace LostAndFound.Pages
                     == ItemReportStatus.Returned)
                 {
                     _returnedReports.Add(report);
+
+                    continue;
+                }
+
+
+                if (report.RegisteredByStaffID == 0)
+                {
+                    _publicSubmissions.Add(report);
                 }
                 else
                 {

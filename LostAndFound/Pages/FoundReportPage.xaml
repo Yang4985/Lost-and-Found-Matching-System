@@ -15,6 +15,16 @@
             MaximumWidthRequest="1100"
             HorizontalOptions="Fill">
 
+            <Button
+                 Text="← Back to Staff Dashboard"
+                 Clicked="OnBackToDashboardClicked"
+                 BackgroundColor="Transparent"
+                 TextColor="#B69CFF"
+                 FontAttributes="Bold"
+                 HorizontalOptions="Start"
+                 Padding="0,8" />
+
+
             <!-- PAGE HEADER -->
             <VerticalStackLayout Spacing="4">
 
@@ -156,6 +166,107 @@
 
             </Border>
 
+            <!-- PUBLIC FOUND-ITEM SUBMISSIONS -->
+            <VerticalStackLayout Spacing="12">
+
+                <VerticalStackLayout Spacing="2">
+
+                    <Label Text="Public Found-Item Submissions"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="White" />
+
+                    <Label Text="Reports submitted by students, staff or visitors for staff review."
+               FontSize="14"
+               TextColor="#A9A9B2" />
+
+                </VerticalStackLayout>
+
+
+                <CollectionView x:Name="PublicSubmissionsView"
+                    MinimumHeightRequest="100">
+
+                    <CollectionView.EmptyView>
+
+                        <Border Padding="20"
+                    BackgroundColor="#1D1D21"
+                    Stroke="#33333A"
+                    StrokeShape="RoundRectangle 14">
+
+                            <Label Text="There are currently no public found-item submissions."
+                       HorizontalOptions="Center"
+                       TextColor="#A9A9B2" />
+
+                        </Border>
+
+                    </CollectionView.EmptyView>
+
+
+                    <CollectionView.ItemTemplate>
+
+                        <DataTemplate>
+
+                            <Border Padding="18"
+                        Margin="0,5"
+                        BackgroundColor="#1D1D21"
+                        Stroke="#463A68"
+                        StrokeShape="RoundRectangle 14">
+
+                                <Grid ColumnDefinitions="*,Auto"
+                          ColumnSpacing="16">
+
+                                    <VerticalStackLayout
+                            Grid.Column="0"
+                            Spacing="4">
+
+                                        <Label Text="{Binding Name}"
+                                   FontSize="18"
+                                   FontAttributes="Bold"
+                                   TextColor="White" />
+
+                                        <Label Text="{Binding Category}"
+                                   TextColor="#C6C6CE" />
+
+                                        <Label Text="{Binding Location, StringFormat='Found at: {0}'}"
+                                   TextColor="#A9A9B2" />
+
+                                        <Label Text="{Binding DateFound, StringFormat='Found on: {0:dd MMM yyyy}'}"
+                                   TextColor="#A9A9B2" />
+
+                                        <Label Text="{Binding Description, StringFormat='Description: {0}'}"
+                                   TextColor="#D0D0D7" />
+
+                                        <Label Text="Storage: Pending staff intake"
+                                   TextColor="#F0C27B" />
+
+                                    </VerticalStackLayout>
+
+
+                                    <Border Grid.Column="1"
+                                Padding="10,5"
+                                VerticalOptions="Start"
+                                BackgroundColor="#2C244A"
+                                StrokeThickness="0"
+                                StrokeShape="RoundRectangle 14">
+
+                                        <Label Text="PUBLIC SUBMISSION"
+                                   FontSize="11"
+                                   FontAttributes="Bold"
+                                   TextColor="#C6B4FF" />
+
+                                    </Border>
+
+                                </Grid>
+
+                            </Border>
+
+                        </DataTemplate>
+
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+
+            </VerticalStackLayout>
 
             <!-- AVAILABLE FOUND ITEMS -->
             <VerticalStackLayout Spacing="12">

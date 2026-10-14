@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LostAndFound.Pages.StaffDashboardPage"
+             Title="Staff Dashboard"
+             BackgroundColor="#151517">
+
+    <ScrollView>
+        <Grid Padding="36"
+              MaximumWidthRequest="1100"
+              HorizontalOptions="Center">
+
+            <VerticalStackLayout Spacing="28">
+
+                <!-- HEADER -->
+                <Grid ColumnDefinitions="*,Auto">
+
+                    <VerticalStackLayout Spacing="4">
+
+                        <Label Text="Staff Dashboard"
+                               FontSize="34"
+                               FontAttributes="Bold"
+                               TextColor="#B69CFF" />
+
+                        <Label x:Name="SignedInLabel"
+                               Text="Signed in"
+                               FontSize="14"
+                               TextColor="#A9A9B2" />
+
+                    </VerticalStackLayout>
+
+                    <Button Grid.Column="1"
+                            Text="Sign Out"
+                            Clicked="OnSignOutClicked"
+                            BackgroundColor="#332A3A"
+                            TextColor="White"
+                            CornerRadius="10"
+                            Padding="22,0"
+                            VerticalOptions="Center" />
+
+                </Grid>
+
+
+                <!-- SUMMARY -->
+                <Grid ColumnDefinitions="*,*,*"
+                      ColumnSpacing="16">
+
+                    <Border Grid.Column="0"
+                            Padding="22"
+                            BackgroundColor="#1D1D21"
+                            Stroke="#33333A"
+                            StrokeShape="RoundRectangle 16">
+
+                        <VerticalStackLayout>
+                            <Label x:Name="ActiveFoundCountLabel"
+                                   Text="0"
+                                   FontSize="32"
+                                   FontAttributes="Bold"
+                                   TextColor="#72D59B" />
+
+                            <Label Text="Active Found Items"
+                                   TextColor="#A9A9B2" />
+                        </VerticalStackLayout>
+                    </Border>
+
+
+                    <Border Grid.Column="1"
+                            Padding="22"
+                            BackgroundColor="#1D1D21"
+                            Stroke="#33333A"
+                            StrokeShape="RoundRectangle 16">
+
+                        <VerticalStackLayout>
+                            <Label x:Name="MatchCountLabel"
+                                   Text="0"
+                                   FontSize="32"
+                                   FontAttributes="Bold"
+                                   TextColor="#B69CFF" />
+
+                            <Label Text="Possible Matches"
+                                   TextColor="#A9A9B2" />
+                        </VerticalStackLayout>
+                    </Border>
+
+
+                    <Border Grid.Column="2"
+                            Padding="22"
+                            BackgroundColor="#1D1D21"
+                            Stroke="#33333A"
+                            StrokeShape="RoundRectangle 16">
+
+                        <VerticalStackLayout>
+                            <Label x:Name="ReturnedCountLabel"
+                                   Text="0"
+                                   FontSize="32"
+                                   FontAttributes="Bold"
+                                   TextColor="#71B7FF" />
+
+                            <Label Text="Returned Items"
+                                   TextColor="#A9A9B2" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                </Grid>
+
+
+                <!-- ACTIONS -->
+                <Grid ColumnDefinitions="*,*"
+                      ColumnSpacing="20">
+
+                    <Border Grid.Column="0"
+                            Padding="28"
+                            BackgroundColor="#1D1D21"
+                            Stroke="#33333A"
+                            StrokeShape="RoundRectangle 18">
+
+                        <VerticalStackLayout Spacing="12">
+
+                            <Label Text="Manage Found Items"
+                                   FontSize="22"
+                                   FontAttributes="Bold"
+                                   TextColor="White" />
+
+                            <Label Text="Review public submissions, register items, manage storage, and record returns."
+                                   TextColor="#A9A9B2"
+                                   FontSize="14" />
+
+                            <Button Text="Open Found Reports"
+                                    Clicked="OnFoundReportsClicked"
+                                    BackgroundColor="#3E7C5C"
+                                    TextColor="White"
+                                    FontAttributes="Bold"
+                                    CornerRadius="10"
+                                    HeightRequest="48" />
+
+                        </VerticalStackLayout>
+
+                    </Border>
+
+
+                    <Border Grid.Column="1"
+                            Padding="28"
+                            BackgroundColor="#1D1D21"
+                            Stroke="#33333A"
+                            StrokeShape="RoundRectangle 18">
+
+                        <VerticalStackLayout Spacing="12">
+
+                            <Label Text="Review Possible Matches"
+                                   FontSize="22"
+                                   FontAttributes="Bold"
+                                   TextColor="White" />
+
+                            <Label Text="Compare lost and found reports and review matching confidence before ownership verification."
+                                   TextColor="#A9A9B2"
+                                   FontSize="14" />
+
+                            <Button Text="View Possible Matches"
+                                    Clicked="OnMatchesClicked"
+                                    BackgroundColor="#5930DB"
+                                    TextColor="White"
+                                    FontAttributes="Bold"
+                                    CornerRadius="10"
+                                    HeightRequest="48" />
+
+                        </VerticalStackLayout>
+
+                    </Border>
+
+                </Grid>
+
+            </VerticalStackLayout>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
