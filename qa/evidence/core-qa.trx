@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="3c1fbd68-27db-404f-ad8d-8dc8cbf1f6d8" name="16419@DABUWEI 2026-10-07 12:39:32" runUser="DABUWEI\CodexSandboxOffline" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-07T12:39:32.8475249+13:00" queuing="2026-10-07T12:39:32.8475251+13:00" start="2026-10-07T12:39:31.9642947+13:00" finish="2026-10-07T12:39:33.0416248+13:00" />
+  <TestSettings name="default" id="60f86e85-a275-4877-b78d-3b678421030e">
+    <Deployment runDeploymentRoot="16419_DABUWEI_2026-10-07_12_39_32" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="634a5609-b0a3-4d7f-b8d5-7747cb221aa8" testId="1aad11a2-6330-89df-991b-65123c66f05f" testName="TC17_D002_ReturnedFoundItem_IsNotAvailableForMatching" computerName="DABUWEI" duration="00:00:00.0306943" startTime="2026-10-07T12:39:32.7966307+13:00" endTime="2026-10-07T12:39:32.8274014+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="634a5609-b0a3-4d7f-b8d5-7747cb221aa8">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.HasCount 失败。大小 0 的预期集合。实际： 1。‘collection’表达式:‘data.GenerateMatches()’。 D002: Returned item remains a candidate.</Message>
+          <StackTrace>   at Microsoft.VisualStudio.TestTools.UnitTesting.Assert.ThrowAssertCountFailed(String assertionName, Int32 expectedCount, Int32 actualCount, String userMessage) in /_/src/TestFramework/TestFramework/Assertions/Assert.Count.cs:line 345&#xD;
+   at Microsoft.VisualStudio.TestTools.UnitTesting.Assert.HasCount[T](String assertionName, Int32 expected, IEnumerable`1 collection, String message, String collectionExpression) in /_/src/TestFramework/TestFramework/Assertions/Assert.Count.cs:line 330&#xD;
+   at Microsoft.VisualStudio.TestTools.UnitTesting.Assert.HasCount[T](Int32 expected, IEnumerable`1 collection, String message, String collectionExpression) in /_/src/TestFramework/TestFramework/Assertions/Assert.Count.cs:line 260&#xD;
+   at LostAndFound.QA.MatchingTests.TC17_D002_ReturnedFoundItem_IsNotAvailableForMatching() in C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\MatchingTests.cs:line 192&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="528939a9-3939-49b6-9de4-e5aaab7c3f31" testId="19919127-1131-8773-9e8c-fc127a230dd5" testName="TC12_AddLost_AssignsDistinctIdsAndSubmittedStatus" computerName="DABUWEI" duration="00:00:00.0033676" startTime="2026-10-07T12:39:32.7940167+13:00" endTime="2026-10-07T12:39:32.7974363+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="528939a9-3939-49b6-9de4-e5aaab7c3f31" />
+    <UnitTestResult executionId="483e5b7b-f42c-47eb-bd1d-9a1dcee04537" testId="1942893b-7d45-8cfa-a201-ddcbf7a8c9d2" testName="TC10_EmptyCollections_NoMatches" computerName="DABUWEI" duration="00:00:00.0049240" startTime="2026-10-07T12:39:32.7909153+13:00" endTime="2026-10-07T12:39:32.7959016+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="483e5b7b-f42c-47eb-bd1d-9a1dcee04537" />
+    <UnitTestResult executionId="67f510eb-f648-4815-a426-eb4ad05c02b4" testId="1685fccf-c4a9-8eec-bb8a-efbaaf4fb0db" testName="TC01_AllSignalsMatch_Score100" computerName="DABUWEI" duration="00:00:00.1984148" startTime="2026-10-07T12:39:32.7216294+13:00" endTime="2026-10-07T12:39:32.9475304+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67f510eb-f648-4815-a426-eb4ad05c02b4" />
+    <UnitTestResult executionId="47f9cd05-1357-40e4-a3fe-40d05c8642b0" testId="15300588-99fa-841d-81ec-2c91f4141b21" testName="TC05_RecommendationThresholds (79,&quot;Medium&quot;)" computerName="DABUWEI" duration="00:00:00.0000109" startTime="2026-10-07T12:39:32.7938806+13:00" endTime="2026-10-07T12:39:32.7939705+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="47f9cd05-1357-40e4-a3fe-40d05c8642b0" />
+    <UnitTestResult executionId="809476e4-ffd3-49b1-9ebf-833e08c3acec" testId="18cdfe2a-ff00-8a8a-a16d-1a0b61303a09" testName="TC05_RecommendationThresholds (0,&quot;Not Recommended&quot;)" computerName="DABUWEI" duration="00:00:00.0000038" startTime="2026-10-07T12:39:32.7703041+13:00" endTime="2026-10-07T12:39:32.7703437+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="809476e4-ffd3-49b1-9ebf-833e08c3acec" />
+    <UnitTestResult executionId="ffd4ebce-b275-4115-bd91-7f1290243292" testId="137225e7-d906-8f3a-a461-a2e702c1f0ba" testName="TC18_D003_RecreatedService_RetainsSavedReport" computerName="DABUWEI" duration="00:00:00.0306743" startTime="2026-10-07T12:39:32.7966347+13:00" endTime="2026-10-07T12:39:32.8274013+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ffd4ebce-b275-4115-bd91-7f1290243292">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.IsTrue 失败。‘condition’表达式:‘recreated.LostReports.Any(r =&gt; r.Name == lost.Name)’。 D003: Registered report is not persistent.</Message>
+          <StackTrace>   at Microsoft.VisualStudio.TestTools.UnitTesting.Assert.ThrowAssertIsTrueFailed(String message) in /_/src/TestFramework/TestFramework/Assertions/Assert.IsTrue.cs:line 161&#xD;
+   at Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(Nullable`1 condition, String message, String conditionExpression) in /_/src/TestFramework/TestFramework/Assertions/Assert.IsTrue.cs:line 153&#xD;
+   at LostAndFound.QA.MatchingTests.TC18_D003_RecreatedService_RetainsSavedReport() in C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\MatchingTests.cs:line 201&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="842a11a8-8f4e-4eab-b9d1-97b9eba4dc21" testId="13c1a039-9b5f-8c53-b9da-d4e492f0fb52" testName="TC02_CategoryMismatchOrMissing_ScoreZero (&quot;&quot;)" computerName="DABUWEI" duration="00:00:00.0112455" startTime="2026-10-07T12:39:32.7216491+13:00" endTime="2026-10-07T12:39:32.7697314+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="842a11a8-8f4e-4eab-b9d1-97b9eba4dc21" />
+    <UnitTestResult executionId="6700ae81-6633-471c-88c8-68dee39550b2" testId="17da3a04-c1a0-8acf-baea-47e17e30fab5" testName="TC04_DateBoundary_UsesOneDayWindow (2,85)" computerName="DABUWEI" duration="00:00:00.1858312" startTime="2026-10-07T12:39:32.7216450+13:00" endTime="2026-10-07T12:39:32.9349296+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6700ae81-6633-471c-88c8-68dee39550b2" />
+    <UnitTestResult executionId="b70903e1-19ee-4fe4-8a66-025a20b97e88" testId="15f47a40-7ff1-878c-9bc9-7dc291063a46" testName="TC05_RecommendationThresholds (40,&quot;Low&quot;)" computerName="DABUWEI" duration="00:00:00.0000135" startTime="2026-10-07T12:39:32.7627454+13:00" endTime="2026-10-07T12:39:32.7697059+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b70903e1-19ee-4fe4-8a66-025a20b97e88" />
+    <UnitTestResult executionId="cf09831e-c30c-4cf6-8e5a-a140c937004b" testId="18f35a70-89b1-8b76-92ee-0a02be88719a" testName="TC15_RepeatedMatching_DoesNotMutateReports" computerName="DABUWEI" duration="00:00:00.0016453" startTime="2026-10-07T12:39:32.7961365+13:00" endTime="2026-10-07T12:39:32.7978408+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf09831e-c30c-4cf6-8e5a-a140c937004b" />
+    <UnitTestResult executionId="b6c4d368-688c-4809-ac79-262bbd0bde11" testId="104cabd6-991b-89f1-90f5-18e117f6823d" testName="TC05_RecommendationThresholds (100,&quot;High&quot;)" computerName="DABUWEI" duration="00:00:00.0000185" startTime="2026-10-07T12:39:32.7789541+13:00" endTime="2026-10-07T12:39:32.7790790+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b6c4d368-688c-4809-ac79-262bbd0bde11" />
+    <UnitTestResult executionId="a2d35587-4444-4a7a-94f9-294e5ed5c505" testId="15e9d760-de54-8652-b6b8-c80873e9fd94" testName="TC05_RecommendationThresholds (59,&quot;Low&quot;)" computerName="DABUWEI" duration="00:00:00.0111964" startTime="2026-10-07T12:39:32.7216670+13:00" endTime="2026-10-07T12:39:32.7696917+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a2d35587-4444-4a7a-94f9-294e5ed5c505" />
+    <UnitTestResult executionId="070dff5c-a1f7-4efe-ac6f-585b0c46d1d7" testId="1238e802-6924-8838-a4f9-42138bae8ead" testName="TC09_RepeatedKeywords_DoNotExceed100" computerName="DABUWEI" duration="00:00:00.1788354" startTime="2026-10-07T12:39:32.7908320+13:00" endTime="2026-10-07T12:39:32.9716775+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="070dff5c-a1f7-4efe-ac6f-585b0c46d1d7" />
+    <UnitTestResult executionId="5d38b54d-d1e5-4f72-8854-157e7e88e51d" testId="16faf24a-5f58-8eaa-abef-2961dd2ef707" testName="TC06_NullReport_ScoreZero (True)" computerName="DABUWEI" duration="00:00:00.0002264" startTime="2026-10-07T12:39:32.7790022+13:00" endTime="2026-10-07T12:39:32.7793134+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5d38b54d-d1e5-4f72-8854-157e7e88e51d" />
+    <UnitTestResult executionId="8a1b9687-3b7b-438f-a45e-a9088e616a2e" testId="1b27bec6-87bf-80d1-a983-f35ef1339976" testName="TC02_CategoryMismatchOrMissing_ScoreZero (&quot; &quot;)" computerName="DABUWEI" duration="00:00:00.0000414" startTime="2026-10-07T12:39:32.7626600+13:00" endTime="2026-10-07T12:39:32.7697197+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8a1b9687-3b7b-438f-a45e-a9088e616a2e" />
+    <UnitTestResult executionId="4b019ce2-b621-4687-bd7b-eb282c6033b0" testId="1e935f9e-2347-8f77-98c1-343a4773b8ad" testName="TC05_RecommendationThresholds (39,&quot;Not Recommended&quot;)" computerName="DABUWEI" duration="00:00:00.0111661" startTime="2026-10-07T12:39:32.7216046+13:00" endTime="2026-10-07T12:39:32.7696725+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4b019ce2-b621-4687-bd7b-eb282c6033b0" />
+    <UnitTestResult executionId="ec3d5f41-a532-493d-9ba4-8727993b79ce" testId="1e6ea441-f6dd-81c0-ad01-e6279c696ec4" testName="TC16_D001_UIAndCore_UseSameCategoryExclusion" computerName="DABUWEI" duration="00:00:00.0307139" startTime="2026-10-07T12:39:32.7966065+13:00" endTime="2026-10-07T12:39:32.8274014+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ec3d5f41-a532-493d-9ba4-8727993b79ce">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.HasCount 失败。大小 0 的预期集合。实际： 1。‘collection’表达式:‘data.GenerateMatches()’。 D001: UI still recommends a different-category item.</Message>
+          <StackTrace>   at Microsoft.VisualStudio.TestTools.UnitTesting.Assert.ThrowAssertCountFailed(String assertionName, Int32 expectedCount, Int32 actualCount, String userMessage) in /_/src/TestFramework/TestFramework/Assertions/Assert.Count.cs:line 345&#xD;
+   at Microsoft.VisualStudio.TestTools.UnitTesting.Assert.HasCount[T](String assertionName, Int32 expected, IEnumerable`1 collection, String message, String collectionExpression) in /_/src/TestFramework/TestFramework/Assertions/Assert.Count.cs:line 330&#xD;
+   at Microsoft.VisualStudio.TestTools.UnitTesting.Assert.HasCount[T](Int32 expected, IEnumerable`1 collection, String message, String collectionExpression) in /_/src/TestFramework/TestFramework/Assertions/Assert.Count.cs:line 260&#xD;
+   at LostAndFound.QA.MatchingTests.TC16_D001_UIAndCore_UseSameCategoryExclusion() in C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\MatchingTests.cs:line 184&#xD;
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="3d97f763-3674-4c47-81b3-ac88f5f0e5c6" testId="16546663-0fac-8674-8a34-af3dcfc908a1" testName="TC11_ClosedReports_Excluded (False)" computerName="DABUWEI" duration="00:00:00.0018552" startTime="2026-10-07T12:39:32.7940072+13:00" endTime="2026-10-07T12:39:32.7959039+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3d97f763-3674-4c47-81b3-ac88f5f0e5c6" />
+    <UnitTestResult executionId="322a9f6b-76e5-4b11-a8de-16618733ea7a" testId="12bab9d6-5f2d-8082-93e4-d656f8f45c22" testName="TC03_CaseAndWhitespace_DoNotChangeExactFields" computerName="DABUWEI" duration="00:00:00.1708827" startTime="2026-10-07T12:39:32.7626413+13:00" endTime="2026-10-07T12:39:32.9342013+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="322a9f6b-76e5-4b11-a8de-16618733ea7a" />
+    <UnitTestResult executionId="c2958dc0-6df7-4152-a9f1-2eec5e6ee9a7" testId="13f461a5-7525-8f41-86a6-62dbf15c874f" testName="TC02_CategoryMismatchOrMissing_ScoreZero (&quot;Wallet&quot;)" computerName="DABUWEI" duration="00:00:00.0112084" startTime="2026-10-07T12:39:32.7216840+13:00" endTime="2026-10-07T12:39:32.7694626+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c2958dc0-6df7-4152-a9f1-2eec5e6ee9a7" />
+    <UnitTestResult executionId="2a32a46c-61f1-4ea2-a90e-d797e8288823" testId="1198d333-9b1d-8c46-b258-c5e730fe0997" testName="TC04_DateBoundary_UsesOneDayWindow (0,100)" computerName="DABUWEI" duration="00:00:00.1985885" startTime="2026-10-07T12:39:32.7216154+13:00" endTime="2026-10-07T12:39:32.9476560+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2a32a46c-61f1-4ea2-a90e-d797e8288823" />
+    <UnitTestResult executionId="e121dd34-a72d-4fdd-8c61-2d1c53298e9d" testId="1ff1bc59-baeb-87f6-ae54-2d34b1f58776" testName="TC14_UIResults_SortedWithExplanations" computerName="DABUWEI" duration="00:00:00.0038763" startTime="2026-10-07T12:39:32.7943511+13:00" endTime="2026-10-07T12:39:32.7982844+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e121dd34-a72d-4fdd-8c61-2d1c53298e9d" />
+    <UnitTestResult executionId="22167aee-bbfe-41d2-9c8a-2b07207cecc6" testId="1ef37d3c-a933-8c4b-958e-6a55768282dd" testName="TC05_RecommendationThresholds (60,&quot;Medium&quot;)" computerName="DABUWEI" duration="00:00:00.0000123" startTime="2026-10-07T12:39:32.7701155+13:00" endTime="2026-10-07T12:39:32.7702071+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="22167aee-bbfe-41d2-9c8a-2b07207cecc6" />
+    <UnitTestResult executionId="e0be6a84-5b1b-4c83-bd9e-6d8d210db3aa" testId="195f2cdb-9efd-8481-aba2-9c54a0c64fcb" testName="TC05_RecommendationThresholds (80,&quot;High&quot;)" computerName="DABUWEI" duration="00:00:00.0000099" startTime="2026-10-07T12:39:32.7938980+13:00" endTime="2026-10-07T12:39:32.7939883+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e0be6a84-5b1b-4c83-bd9e-6d8d210db3aa" />
+    <UnitTestResult executionId="8440e91f-2daa-4b7b-97ca-420815c9901c" testId="168fe061-c8b7-824a-9d2c-245e5cb2a7e2" testName="TC11_ClosedReports_Excluded (True)" computerName="DABUWEI" duration="00:00:00.0019616" startTime="2026-10-07T12:39:32.7938620+13:00" endTime="2026-10-07T12:39:32.7959093+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8440e91f-2daa-4b7b-97ca-420815c9901c" />
+    <UnitTestResult executionId="9cef0016-c264-42fc-a307-b759d681c40e" testId="16f67aad-04e8-8f39-a9c8-16215450edcc" testName="TC08_EmptyDescriptions_NoKeywordBonus" computerName="DABUWEI" duration="00:00:00.0004740" startTime="2026-10-07T12:39:32.7906111+13:00" endTime="2026-10-07T12:39:32.7911587+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9cef0016-c264-42fc-a307-b759d681c40e" />
+    <UnitTestResult executionId="3dbd15b5-11f0-4f3e-8cef-e071d953e2ce" testId="1d2608ea-6bdb-8b25-a082-3377f5b9737c" testName="TC04_DateBoundary_UsesOneDayWindow (-2,85)" computerName="DABUWEI" duration="00:00:00.1934834" startTime="2026-10-07T12:39:32.7216353+13:00" endTime="2026-10-07T12:39:32.9425784+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3dbd15b5-11f0-4f3e-8cef-e071d953e2ce" />
+    <UnitTestResult executionId="eebfafc9-0af2-4196-b6c9-aba633fff6c2" testId="11034fee-30b3-8300-a6cf-962372e4e967" testName="TC04_DateBoundary_UsesOneDayWindow (1,100)" computerName="DABUWEI" duration="00:00:00.1857793" startTime="2026-10-07T12:39:32.7216584+13:00" endTime="2026-10-07T12:39:32.9348913+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eebfafc9-0af2-4196-b6c9-aba633fff6c2" />
+    <UnitTestResult executionId="bb19cdb5-012e-4c90-971d-249ddec9ad6f" testId="1398182f-3413-88aa-974c-2a9e36a8b527" testName="TC07_NullItem_ScoreZero (True)" computerName="DABUWEI" duration="00:00:00.0002331" startTime="2026-10-07T12:39:32.7905603+13:00" endTime="2026-10-07T12:39:32.7908830+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bb19cdb5-012e-4c90-971d-249ddec9ad6f" />
+    <UnitTestResult executionId="5f20c6ef-8d15-4a2a-933d-ac196aa32118" testId="151e5fea-103b-88aa-b71c-c0201c3f4a1f" testName="TC06_NullReport_ScoreZero (False)" computerName="DABUWEI" duration="00:00:00.0003362" startTime="2026-10-07T12:39:32.7903370+13:00" endTime="2026-10-07T12:39:32.7907941+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5f20c6ef-8d15-4a2a-933d-ac196aa32118" />
+    <UnitTestResult executionId="006d87de-1b6f-4cad-8e0f-fe97da6591be" testId="1b5a13e0-d500-890b-ae22-6c7d92aef899" testName="TC07_NullItem_ScoreZero (False)" computerName="DABUWEI" duration="00:00:00.0002737" startTime="2026-10-07T12:39:32.7905779+13:00" endTime="2026-10-07T12:39:32.7909298+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="006d87de-1b6f-4cad-8e0f-fe97da6591be" />
+    <UnitTestResult executionId="8193ba62-b10a-4f54-8c4a-0e0f13600f6a" testId="1a403570-cc0f-8ea9-a662-8433714a189d" testName="TC13_AddFound_AssignsDistinctIdsAndSubmittedStatus" computerName="DABUWEI" duration="00:00:00.0027360" startTime="2026-10-07T12:39:32.7943306+13:00" endTime="2026-10-07T12:39:32.7971363+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8193ba62-b10a-4f54-8c4a-0e0f13600f6a" />
+    <UnitTestResult executionId="6957d0e3-d4ac-4e47-a4e9-b39c57d9946c" testId="1bb50b73-968c-8252-9e59-5e30fd40dd65" testName="TC04_DateBoundary_UsesOneDayWindow (-1,100)" computerName="DABUWEI" duration="00:00:00.1820849" startTime="2026-10-07T12:39:32.7702038+13:00" endTime="2026-10-07T12:39:32.9522905+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6957d0e3-d4ac-4e47-a4e9-b39c57d9946c" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="TC04_DateBoundary_UsesOneDayWindow (1,100)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="11034fee-30b3-8300-a6cf-962372e4e967">
+      <Execution id="eebfafc9-0af2-4196-b6c9-aba633fff6c2" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC04_DateBoundary_UsesOneDayWindow" />
+    </UnitTest>
+    <UnitTest name="TC14_UIResults_SortedWithExplanations" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="1ff1bc59-baeb-87f6-ae54-2d34b1f58776">
+      <Execution id="e121dd34-a72d-4fdd-8c61-2d1c53298e9d" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC14_UIResults_SortedWithExplanations" />
+    </UnitTest>
+    <UnitTest name="TC09_RepeatedKeywords_DoNotExceed100" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="1238e802-6924-8838-a4f9-42138bae8ead">
+      <Execution id="070dff5c-a1f7-4efe-ac6f-585b0c46d1d7" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC09_RepeatedKeywords_DoNotExceed100" />
+    </UnitTest>
+    <UnitTest name="TC04_DateBoundary_UsesOneDayWindow (-1,100)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="1bb50b73-968c-8252-9e59-5e30fd40dd65">
+      <Execution id="6957d0e3-d4ac-4e47-a4e9-b39c57d9946c" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC04_DateBoundary_UsesOneDayWindow" />
+    </UnitTest>
+    <UnitTest name="TC04_DateBoundary_UsesOneDayWindow (2,85)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="17da3a04-c1a0-8acf-baea-47e17e30fab5">
+      <Execution id="6700ae81-6633-471c-88c8-68dee39550b2" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC04_DateBoundary_UsesOneDayWindow" />
+    </UnitTest>
+    <UnitTest name="TC05_RecommendationThresholds (80,&quot;High&quot;)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="195f2cdb-9efd-8481-aba2-9c54a0c64fcb">
+      <Execution id="e0be6a84-5b1b-4c83-bd9e-6d8d210db3aa" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC05_RecommendationThresholds" />
+    </UnitTest>
+    <UnitTest name="TC02_CategoryMismatchOrMissing_ScoreZero (&quot; &quot;)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="1b27bec6-87bf-80d1-a983-f35ef1339976">
+      <Execution id="8a1b9687-3b7b-438f-a45e-a9088e616a2e" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC02_CategoryMismatchOrMissing_ScoreZero" />
+    </UnitTest>
+    <UnitTest name="TC07_NullItem_ScoreZero (False)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="1b5a13e0-d500-890b-ae22-6c7d92aef899">
+      <Execution id="006d87de-1b6f-4cad-8e0f-fe97da6591be" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC07_NullItem_ScoreZero" />
+    </UnitTest>
+    <UnitTest name="TC18_D003_RecreatedService_RetainsSavedReport" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="137225e7-d906-8f3a-a461-a2e702c1f0ba">
+      <TestCategory>
+        <TestCategoryItem TestCategory="OpenDefect" />
+      </TestCategory>
+      <Execution id="ffd4ebce-b275-4115-bd91-7f1290243292" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC18_D003_RecreatedService_RetainsSavedReport" />
+    </UnitTest>
+    <UnitTest name="TC01_AllSignalsMatch_Score100" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="1685fccf-c4a9-8eec-bb8a-efbaaf4fb0db">
+      <Execution id="67f510eb-f648-4815-a426-eb4ad05c02b4" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC01_AllSignalsMatch_Score100" />
+    </UnitTest>
+    <UnitTest name="TC03_CaseAndWhitespace_DoNotChangeExactFields" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="12bab9d6-5f2d-8082-93e4-d656f8f45c22">
+      <Execution id="322a9f6b-76e5-4b11-a8de-16618733ea7a" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC03_CaseAndWhitespace_DoNotChangeExactFields" />
+    </UnitTest>
+    <UnitTest name="TC05_RecommendationThresholds (60,&quot;Medium&quot;)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="1ef37d3c-a933-8c4b-958e-6a55768282dd">
+      <Execution id="22167aee-bbfe-41d2-9c8a-2b07207cecc6" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC05_RecommendationThresholds" />
+    </UnitTest>
+    <UnitTest name="TC06_NullReport_ScoreZero (True)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="16faf24a-5f58-8eaa-abef-2961dd2ef707">
+      <Execution id="5d38b54d-d1e5-4f72-8854-157e7e88e51d" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC06_NullReport_ScoreZero" />
+    </UnitTest>
+    <UnitTest name="TC05_RecommendationThresholds (40,&quot;Low&quot;)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="15f47a40-7ff1-878c-9bc9-7dc291063a46">
+      <Execution id="b70903e1-19ee-4fe4-8a66-025a20b97e88" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC05_RecommendationThresholds" />
+    </UnitTest>
+    <UnitTest name="TC02_CategoryMismatchOrMissing_ScoreZero (&quot;Wallet&quot;)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="13f461a5-7525-8f41-86a6-62dbf15c874f">
+      <Execution id="c2958dc0-6df7-4152-a9f1-2eec5e6ee9a7" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC02_CategoryMismatchOrMissing_ScoreZero" />
+    </UnitTest>
+    <UnitTest name="TC04_DateBoundary_UsesOneDayWindow (-2,85)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="1d2608ea-6bdb-8b25-a082-3377f5b9737c">
+      <Execution id="3dbd15b5-11f0-4f3e-8cef-e071d953e2ce" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC04_DateBoundary_UsesOneDayWindow" />
+    </UnitTest>
+    <UnitTest name="TC15_RepeatedMatching_DoesNotMutateReports" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="18f35a70-89b1-8b76-92ee-0a02be88719a">
+      <Execution id="cf09831e-c30c-4cf6-8e5a-a140c937004b" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC15_RepeatedMatching_DoesNotMutateReports" />
+    </UnitTest>
+    <UnitTest name="TC12_AddLost_AssignsDistinctIdsAndSubmittedStatus" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="19919127-1131-8773-9e8c-fc127a230dd5">
+      <Execution id="528939a9-3939-49b6-9de4-e5aaab7c3f31" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC12_AddLost_AssignsDistinctIdsAndSubmittedStatus" />
+    </UnitTest>
+    <UnitTest name="TC08_EmptyDescriptions_NoKeywordBonus" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="16f67aad-04e8-8f39-a9c8-16215450edcc">
+      <Execution id="9cef0016-c264-42fc-a307-b759d681c40e" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC08_EmptyDescriptions_NoKeywordBonus" />
+    </UnitTest>
+    <UnitTest name="TC05_RecommendationThresholds (0,&quot;Not Recommended&quot;)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="18cdfe2a-ff00-8a8a-a16d-1a0b61303a09">
+      <Execution id="809476e4-ffd3-49b1-9ebf-833e08c3acec" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC05_RecommendationThresholds" />
+    </UnitTest>
+    <UnitTest name="TC04_DateBoundary_UsesOneDayWindow (0,100)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="1198d333-9b1d-8c46-b258-c5e730fe0997">
+      <Execution id="2a32a46c-61f1-4ea2-a90e-d797e8288823" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC04_DateBoundary_UsesOneDayWindow" />
+    </UnitTest>
+    <UnitTest name="TC05_RecommendationThresholds (39,&quot;Not Recommended&quot;)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="1e935f9e-2347-8f77-98c1-343a4773b8ad">
+      <Execution id="4b019ce2-b621-4687-bd7b-eb282c6033b0" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC05_RecommendationThresholds" />
+    </UnitTest>
+    <UnitTest name="TC05_RecommendationThresholds (59,&quot;Low&quot;)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="15e9d760-de54-8652-b6b8-c80873e9fd94">
+      <Execution id="a2d35587-4444-4a7a-94f9-294e5ed5c505" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC05_RecommendationThresholds" />
+    </UnitTest>
+    <UnitTest name="TC07_NullItem_ScoreZero (True)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="1398182f-3413-88aa-974c-2a9e36a8b527">
+      <Execution id="bb19cdb5-012e-4c90-971d-249ddec9ad6f" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC07_NullItem_ScoreZero" />
+    </UnitTest>
+    <UnitTest name="TC13_AddFound_AssignsDistinctIdsAndSubmittedStatus" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="1a403570-cc0f-8ea9-a662-8433714a189d">
+      <Execution id="8193ba62-b10a-4f54-8c4a-0e0f13600f6a" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC13_AddFound_AssignsDistinctIdsAndSubmittedStatus" />
+    </UnitTest>
+    <UnitTest name="TC16_D001_UIAndCore_UseSameCategoryExclusion" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="1e6ea441-f6dd-81c0-ad01-e6279c696ec4">
+      <TestCategory>
+        <TestCategoryItem TestCategory="OpenDefect" />
+      </TestCategory>
+      <Execution id="ec3d5f41-a532-493d-9ba4-8727993b79ce" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC16_D001_UIAndCore_UseSameCategoryExclusion" />
+    </UnitTest>
+    <UnitTest name="TC11_ClosedReports_Excluded (True)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="168fe061-c8b7-824a-9d2c-245e5cb2a7e2">
+      <Execution id="8440e91f-2daa-4b7b-97ca-420815c9901c" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC11_ClosedReports_Excluded" />
+    </UnitTest>
+    <UnitTest name="TC06_NullReport_ScoreZero (False)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="151e5fea-103b-88aa-b71c-c0201c3f4a1f">
+      <Execution id="5f20c6ef-8d15-4a2a-933d-ac196aa32118" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC06_NullReport_ScoreZero" />
+    </UnitTest>
+    <UnitTest name="TC17_D002_ReturnedFoundItem_IsNotAvailableForMatching" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="1aad11a2-6330-89df-991b-65123c66f05f">
+      <TestCategory>
+        <TestCategoryItem TestCategory="OpenDefect" />
+      </TestCategory>
+      <Execution id="634a5609-b0a3-4d7f-b8d5-7747cb221aa8" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC17_D002_ReturnedFoundItem_IsNotAvailableForMatching" />
+    </UnitTest>
+    <UnitTest name="TC11_ClosedReports_Excluded (False)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="16546663-0fac-8674-8a34-af3dcfc908a1">
+      <Execution id="3d97f763-3674-4c47-81b3-ac88f5f0e5c6" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC11_ClosedReports_Excluded" />
+    </UnitTest>
+    <UnitTest name="TC10_EmptyCollections_NoMatches" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="1942893b-7d45-8cfa-a201-ddcbf7a8c9d2">
+      <Execution id="483e5b7b-f42c-47eb-bd1d-9a1dcee04537" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC10_EmptyCollections_NoMatches" />
+    </UnitTest>
+    <UnitTest name="TC05_RecommendationThresholds (100,&quot;High&quot;)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="104cabd6-991b-89f1-90f5-18e117f6823d">
+      <Execution id="b6c4d368-688c-4809-ac79-262bbd0bde11" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC05_RecommendationThresholds" />
+    </UnitTest>
+    <UnitTest name="TC02_CategoryMismatchOrMissing_ScoreZero (&quot;&quot;)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="13c1a039-9b5f-8c53-b9da-d4e492f0fb52">
+      <Execution id="842a11a8-8f4e-4eab-b9d1-97b9eba4dc21" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC02_CategoryMismatchOrMissing_ScoreZero" />
+    </UnitTest>
+    <UnitTest name="TC05_RecommendationThresholds (79,&quot;Medium&quot;)" storage="c:\users\16419\documents\codex\2026-09-16\chi\work\lost-found-review\qa.tests\bin\release\net10.0\qa.tests.dll" id="15300588-99fa-841d-81ec-2c91f4141b21">
+      <Execution id="47f9cd05-1357-40e4-a3fe-40d05c8642b0" />
+      <TestMethod codeBase="C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="LostAndFound.QA.MatchingTests" name="TC05_RecommendationThresholds" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="1aad11a2-6330-89df-991b-65123c66f05f" executionId="634a5609-b0a3-4d7f-b8d5-7747cb221aa8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="19919127-1131-8773-9e8c-fc127a230dd5" executionId="528939a9-3939-49b6-9de4-e5aaab7c3f31" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1942893b-7d45-8cfa-a201-ddcbf7a8c9d2" executionId="483e5b7b-f42c-47eb-bd1d-9a1dcee04537" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1685fccf-c4a9-8eec-bb8a-efbaaf4fb0db" executionId="67f510eb-f648-4815-a426-eb4ad05c02b4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="15300588-99fa-841d-81ec-2c91f4141b21" executionId="47f9cd05-1357-40e4-a3fe-40d05c8642b0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="18cdfe2a-ff00-8a8a-a16d-1a0b61303a09" executionId="809476e4-ffd3-49b1-9ebf-833e08c3acec" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="137225e7-d906-8f3a-a461-a2e702c1f0ba" executionId="ffd4ebce-b275-4115-bd91-7f1290243292" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="13c1a039-9b5f-8c53-b9da-d4e492f0fb52" executionId="842a11a8-8f4e-4eab-b9d1-97b9eba4dc21" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="17da3a04-c1a0-8acf-baea-47e17e30fab5" executionId="6700ae81-6633-471c-88c8-68dee39550b2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="15f47a40-7ff1-878c-9bc9-7dc291063a46" executionId="b70903e1-19ee-4fe4-8a66-025a20b97e88" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="18f35a70-89b1-8b76-92ee-0a02be88719a" executionId="cf09831e-c30c-4cf6-8e5a-a140c937004b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="104cabd6-991b-89f1-90f5-18e117f6823d" executionId="b6c4d368-688c-4809-ac79-262bbd0bde11" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="15e9d760-de54-8652-b6b8-c80873e9fd94" executionId="a2d35587-4444-4a7a-94f9-294e5ed5c505" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1238e802-6924-8838-a4f9-42138bae8ead" executionId="070dff5c-a1f7-4efe-ac6f-585b0c46d1d7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="16faf24a-5f58-8eaa-abef-2961dd2ef707" executionId="5d38b54d-d1e5-4f72-8854-157e7e88e51d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1b27bec6-87bf-80d1-a983-f35ef1339976" executionId="8a1b9687-3b7b-438f-a45e-a9088e616a2e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1e935f9e-2347-8f77-98c1-343a4773b8ad" executionId="4b019ce2-b621-4687-bd7b-eb282c6033b0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1e6ea441-f6dd-81c0-ad01-e6279c696ec4" executionId="ec3d5f41-a532-493d-9ba4-8727993b79ce" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="16546663-0fac-8674-8a34-af3dcfc908a1" executionId="3d97f763-3674-4c47-81b3-ac88f5f0e5c6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="12bab9d6-5f2d-8082-93e4-d656f8f45c22" executionId="322a9f6b-76e5-4b11-a8de-16618733ea7a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="13f461a5-7525-8f41-86a6-62dbf15c874f" executionId="c2958dc0-6df7-4152-a9f1-2eec5e6ee9a7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1198d333-9b1d-8c46-b258-c5e730fe0997" executionId="2a32a46c-61f1-4ea2-a90e-d797e8288823" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1ff1bc59-baeb-87f6-ae54-2d34b1f58776" executionId="e121dd34-a72d-4fdd-8c61-2d1c53298e9d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1ef37d3c-a933-8c4b-958e-6a55768282dd" executionId="22167aee-bbfe-41d2-9c8a-2b07207cecc6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="195f2cdb-9efd-8481-aba2-9c54a0c64fcb" executionId="e0be6a84-5b1b-4c83-bd9e-6d8d210db3aa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="168fe061-c8b7-824a-9d2c-245e5cb2a7e2" executionId="8440e91f-2daa-4b7b-97ca-420815c9901c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="16f67aad-04e8-8f39-a9c8-16215450edcc" executionId="9cef0016-c264-42fc-a307-b759d681c40e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1d2608ea-6bdb-8b25-a082-3377f5b9737c" executionId="3dbd15b5-11f0-4f3e-8cef-e071d953e2ce" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="11034fee-30b3-8300-a6cf-962372e4e967" executionId="eebfafc9-0af2-4196-b6c9-aba633fff6c2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1398182f-3413-88aa-974c-2a9e36a8b527" executionId="bb19cdb5-012e-4c90-971d-249ddec9ad6f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="151e5fea-103b-88aa-b71c-c0201c3f4a1f" executionId="5f20c6ef-8d15-4a2a-933d-ac196aa32118" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1b5a13e0-d500-890b-ae22-6c7d92aef899" executionId="006d87de-1b6f-4cad-8e0f-fe97da6591be" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1a403570-cc0f-8ea9-a662-8433714a189d" executionId="8193ba62-b10a-4f54-8c4a-0e0f13600f6a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1bb50b73-968c-8252-9e59-5e30fd40dd65" executionId="6957d0e3-d4ac-4e47-a4e9-b39c57d9946c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="列表中未列出的结果" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="所有已加载的结果" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="34" executed="34" passed="31" failed="3" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>已为 C:\Users\16419\Documents\Codex\2026-09-16\chi\work\lost-found-review\QA.Tests\bin\Release\net10.0\QA.Tests.dll 启用测试并行化(Workers: 16，Scope: MethodLevel)&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

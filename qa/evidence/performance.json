@@ -1,0 +1,124 @@
+{
+  "observedAtUtc": "2026-10-07T04:32:52.4193868Z",
+  "scope": "PrototypeDataService.GenerateMatches, one lost report and 1000 found reports; scoring, explanations and sorting; no UI, storage or network",
+  "fixture": "Deterministic index-based mix of six categories, two locations, two descriptions, dates 2026-10-01 to 2026-10-10; all Submitted",
+  "operatingSystem": "Microsoft Windows 10.0.26200",
+  "runtime": ".NET 10.0.10",
+  "architecture": "X64",
+  "logicalProcessors": 16,
+  "stopwatchFrequency": 10000000,
+  "configuration": "Release",
+  "warmupRuns": 5,
+  "measuredRuns": 20,
+  "lostReports": 1,
+  "foundReports": 1000,
+  "p50Milliseconds": 2.8267,
+  "p95Milliseconds": 4.492,
+  "maxMilliseconds": 22.9238,
+  "meanMilliseconds": 4.018665,
+  "referenceThresholdMilliseconds": 2000,
+  "allServiceRunsWithinReference": true,
+  "limitation": "Service-only reference comparison; does not verify end-to-end 2-second NFR, device-independent performance or matching correctness. Existing defects remain open.",
+  "samples": [
+    {
+      "iteration": 1,
+      "milliseconds": 2.8335,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 2,
+      "milliseconds": 4.492,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 3,
+      "milliseconds": 2.636,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 4,
+      "milliseconds": 2.8267,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 5,
+      "milliseconds": 22.9238,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 6,
+      "milliseconds": 3.0134,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 7,
+      "milliseconds": 3.3785,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 8,
+      "milliseconds": 2.7208,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 9,
+      "milliseconds": 3.4763,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 10,
+      "milliseconds": 2.5699,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 11,
+      "milliseconds": 3.3844,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 12,
+      "milliseconds": 2.6917,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 13,
+      "milliseconds": 4.3461,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 14,
+      "milliseconds": 2.8914,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 15,
+      "milliseconds": 2.5602,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 16,
+      "milliseconds": 2.8348,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 17,
+      "milliseconds": 2.5952,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 18,
+      "milliseconds": 2.7876,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 19,
+      "milliseconds": 2.5876,
+      "candidateCount": 700
+    },
+    {
+      "iteration": 20,
+      "milliseconds": 2.8234,
+      "candidateCount": 700
+    }
+  ]
+}

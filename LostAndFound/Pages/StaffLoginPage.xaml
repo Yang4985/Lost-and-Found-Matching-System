@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LostAndFound.Pages.StaffLoginPage"
+             Title="Staff Sign In"
+             BackgroundColor="#151517">
+
+    <Grid Padding="40"
+          MaximumWidthRequest="600"
+          HorizontalOptions="Center"
+          VerticalOptions="Center">
+
+        <VerticalStackLayout Spacing="24">
+
+            <!-- HEADER -->
+            <VerticalStackLayout Spacing="6"
+                                 HorizontalOptions="Center">
+
+                <Label Text="Staff Sign In"
+                       FontSize="34"
+                       FontAttributes="Bold"
+                       TextColor="#B69CFF"
+                       HorizontalTextAlignment="Center" />
+
+                <Label Text="Authorised campus staff only"
+                       FontSize="15"
+                       TextColor="#A9A9B2"
+                       HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+
+
+            <!-- LOGIN CARD -->
+            <Border Padding="30"
+                    BackgroundColor="#1D1D21"
+                    Stroke="#33333A"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 18">
+
+                <VerticalStackLayout Spacing="20">
+
+                    <Label Text="Staff Account"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           TextColor="White" />
+
+
+                    <Entry x:Name="StaffIdEntry"
+                           Placeholder="Staff ID"
+                           PlaceholderColor="#8D8D96"
+                           TextColor="White"
+                           ReturnType="Next" />
+
+
+                    <Entry x:Name="PasswordEntry"
+                           Placeholder="Password"
+                           PlaceholderColor="#8D8D96"
+                           TextColor="White"
+                           IsPassword="True"
+                           ReturnType="Done" />
+
+
+                    <Label x:Name="ErrorLabel"
+                           TextColor="#FF6B6B"
+                           FontAttributes="Bold"
+                           IsVisible="False" />
+
+
+                    <Button Text="Sign In"
+                            Clicked="OnSignInClicked"
+                            BackgroundColor="#5930DB"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            HeightRequest="50"
+                            CornerRadius="10" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+
+            <Border Padding="14"
+                    BackgroundColor="#211E2C"
+                    Stroke="#463A68"
+                    StrokeShape="RoundRectangle 10">
+
+                <Label Text="Staff access includes found-item management, match review and returned-item processing."
+                       FontSize="13"
+                       TextColor="#D0C8E8"
+                       HorizontalTextAlignment="Center" />
+
+            </Border>
+
+
+            <Button Text="Back to Home"
+                    Clicked="OnBackClicked"
+                    BackgroundColor="Transparent"
+                    TextColor="#B69CFF" />
+
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentPage>

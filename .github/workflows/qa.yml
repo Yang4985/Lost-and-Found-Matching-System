@@ -1,0 +1,31 @@
+name: Core QA baseline
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  core-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restore core QA tests
+        run: dotnet restore QA.Tests/QA.Tests.csproj
+      - name: Build core QA tests
+        run: dotnet build QA.Tests/QA.Tests.csproj -c Release --no-restore -warnaserror
+      - name: Run all acceptance and regression tests
+        run: dotnet test QA.Tests/QA.Tests.csproj -c Release --no-build --logger "trx;LogFileName=core-qa.trx" --results-directory TestResults
+      - name: Measure matching service performance
+        run: dotnet run --project QA.Performance/QA.Performance.csproj -c Release -- TestResults/performance.json
+      - name: Preserve evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: core-qa-results
+          path: TestResults/*
+          if-no-files-found: warn

@@ -9,34 +9,48 @@
     Title="LostAndFound">
 
     <ShellContent
-        Title="Lost Reports"
-        Icon="{StaticResource IconDashboard}"
-        ContentTemplate="{DataTemplate pages:LostReportPage}"
-        Route="lost-reports" />
+    Title="Home"
+    Icon="{StaticResource IconDashboard}"
+    ContentTemplate="{DataTemplate pages:WelcomePage}"
+    Route="home" />
 
     <ShellContent
-        Title="Found Reports"
-        Icon="{StaticResource IconProjects}"
-        ContentTemplate="{DataTemplate pages:FoundReportPage}"
-        Route="found-reports" />
+    Title="Report Lost Item"
+    Icon="{StaticResource IconDashboard}"
+    ContentTemplate="{DataTemplate pages:LostReportPage}"
+    Route="lost-reports" />
 
     <ShellContent
-        Title="Possible Matches"
-        Icon="{StaticResource IconMeta}"
-        ContentTemplate="{DataTemplate pages:MatchesPage}"
-        Route="matches" />
+    Title="Report Found Item"
+    ContentTemplate="{DataTemplate pages:PublicFoundReportPage}"
+    Route="public-found-report"
+    FlyoutItemIsVisible="False" />
 
     <ShellContent
-        Title="Prototype Data"
-        Icon="{StaticResource IconProjects}"
-        ContentTemplate="{DataTemplate pages:ProjectListPage}"
-        Route="projects" />
+    Title="Staff Sign In"
+    ContentTemplate="{DataTemplate pages:StaffLoginPage}"
+    Route="staff-login"
+    FlyoutItemIsVisible="False" />
 
     <ShellContent
-        Title="Sample Settings"
-        Icon="{StaticResource IconMeta}"
-        ContentTemplate="{DataTemplate pages:ManageMetaPage}"
-        Route="manage" />
+    Title="Staff Dashboard"
+    ContentTemplate="{DataTemplate pages:StaffDashboardPage}"
+    Route="staff-dashboard"
+    FlyoutItemIsVisible="False" />
+
+    <ShellContent
+    Title="Found Reports"
+    Icon="{StaticResource IconProjects}"
+    ContentTemplate="{DataTemplate pages:FoundReportPage}"
+    Route="found-reports"
+    FlyoutItemIsVisible="False" />
+
+    <ShellContent
+    Title="Possible Matches"
+    Icon="{StaticResource IconMeta}"
+    ContentTemplate="{DataTemplate pages:MatchesPage}"
+    Route="matches"
+    FlyoutItemIsVisible="False" />
 
     <Shell.FlyoutFooter>
         <Grid Padding="15">
