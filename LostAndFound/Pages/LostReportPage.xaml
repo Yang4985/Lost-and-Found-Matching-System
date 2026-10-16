@@ -1,39 +1,37 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
-             x:Class="LostAndFound.Pages.LostReportPage"
-             Title="Lost Reports">
+<?xml version='1.0' encoding='utf-8'?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:sys="clr-namespace:System;assembly=System.Runtime" x:Class="LostAndFound.Pages.LostReportPage" Title="Lost Reports">
     <ScrollView>
         <VerticalStackLayout Padding="24" Spacing="14">
-            <Label Text="Report a lost item" Style="{StaticResource Headline}" />
-            <Label Text="Enter the information you remember. Fields marked * are required." />
+            <Label Text="Report a lost item" Style="{StaticResource Headline}"/>
+            <Label Text="Enter the information you remember. Fields marked * are required."/>
 
-            <Entry x:Name="ItemNameEntry" Placeholder="Item name *" />
-            <Picker x:Name="CategoryPicker" Title="Category *" />
-            <Entry x:Name="BrandEntry" Placeholder="Brand (optional)" />
-            <Entry x:Name="ColourEntry" Placeholder="Colour (optional)" />
-            <Entry x:Name="LocationEntry" Placeholder="Location lost *" />
-            <DatePicker x:Name="LostDatePicker" MaximumDate="{x:Static sys:DateTime.Today}" xmlns:sys="clr-namespace:System;assembly=System.Runtime" />
-            <Editor x:Name="DescriptionEditor" Placeholder="Description *" AutoSize="TextChanges" MinimumHeightRequest="90" />
-            <Entry x:Name="FeaturesEntry" Placeholder="Distinguishing features" />
-            <Label x:Name="ValidationLabel" TextColor="#C62828" IsVisible="False" />
-            <Button Text="Save lost report" Clicked="OnSaveClicked" />
+            <Button Text="Attach optional PNG or JPEG" Clicked="OnAttachPhotoClicked" MinimumHeightRequest="48"/>
+                <Label x:Name="PhotoLabel" Text="No image selected"/>
+                <VerticalStackLayout Spacing="3"><Entry x:Name="ItemNameEntry" Placeholder="Item name *" SemanticProperties.Description="Item name *"/>
+            <Label x:Name="ItemNameEntryError" IsVisible="False" TextColor="{AppThemeBinding Light=#9E1B32, Dark=#FF9EAA}"/></VerticalStackLayout><VerticalStackLayout Spacing="3"><Picker x:Name="CategoryPicker" Title="Category *" SemanticProperties.Description="Category *"/>
+            <Label x:Name="CategoryPickerError" IsVisible="False" TextColor="{AppThemeBinding Light=#9E1B32, Dark=#FF9EAA}"/></VerticalStackLayout><Entry x:Name="BrandEntry" Placeholder="Brand (optional)" SemanticProperties.Description="Brand (optional)"/>
+            <Entry x:Name="ColourEntry" Placeholder="Colour (optional)" SemanticProperties.Description="Colour (optional)"/>
+            <VerticalStackLayout Spacing="3"><Entry x:Name="LocationEntry" Placeholder="Location lost *" SemanticProperties.Description="Location lost *"/>
+            <Label x:Name="LocationEntryError" IsVisible="False" TextColor="{AppThemeBinding Light=#9E1B32, Dark=#FF9EAA}"/></VerticalStackLayout><VerticalStackLayout Spacing="3"><DatePicker x:Name="LostDatePicker" MaximumDate="{x:Static sys:DateTime.Today}" SemanticProperties.Description="LostDate"/>
+            <Label x:Name="LostDatePickerError" IsVisible="False" TextColor="{AppThemeBinding Light=#9E1B32, Dark=#FF9EAA}"/></VerticalStackLayout><VerticalStackLayout Spacing="3"><Editor x:Name="DescriptionEditor" Placeholder="Description *" AutoSize="TextChanges" MinimumHeightRequest="90" SemanticProperties.Description="Description *"/>
+            <Label x:Name="DescriptionEditorError" IsVisible="False" TextColor="{AppThemeBinding Light=#9E1B32, Dark=#FF9EAA}"/></VerticalStackLayout><Entry x:Name="FeaturesEntry" Placeholder="Distinguishing features" SemanticProperties.Description="Distinguishing features"/>
+            <Label x:Name="ValidationLabel" TextColor="#C62828" IsVisible="False"/>
+            <Button Text="Save lost report" Clicked="OnSaveClicked"/>
 
-            <Label Text="Submitted lost reports" Style="{StaticResource SubHeadline}" Margin="0,20,0,0" />
+            <Label Text="Submitted lost reports" Style="{StaticResource SubHeadline}" Margin="0,20,0,0"/>
             <CollectionView x:Name="ReportsView" MinimumHeightRequest="280">
                 <CollectionView.EmptyView>
-                    <Label Text="No lost reports have been submitted." HorizontalOptions="Center" />
+                    <Label Text="No lost reports have been submitted." HorizontalOptions="Center"/>
                 </CollectionView.EmptyView>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Border Padding="14" Margin="0,5" StrokeShape="RoundRectangle 10">
                             <VerticalStackLayout Spacing="4">
-                                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="18" />
-                                <Label Text="{Binding Category, StringFormat='Category: {0}'}" />
-                                <Label Text="{Binding Location, StringFormat='Lost at: {0}'}" />
-                                <Label Text="{Binding DateLost, StringFormat='Date: {0:dd MMM yyyy}'}" />
-                                <Label Text="{Binding Status, StringFormat='Status: {0}'}" />
+                                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="18"/>
+                                <Label Text="{Binding Category, StringFormat='Category: {0}'}"/>
+                                <Label Text="{Binding Location, StringFormat='Lost at: {0}'}"/>
+                                <Label Text="{Binding DateLost, StringFormat='Date: {0:dd MMM yyyy}'}"/>
+                                <Label Text="{Binding Status, StringFormat='Status: {0}'}"/>
                             </VerticalStackLayout>
                         </Border>
                     </DataTemplate>

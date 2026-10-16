@@ -42,6 +42,7 @@
                 </Grid>
 
 
+                <Button Text="Review matches and ownership claims" Clicked="OnWorkflowClicked" MinimumHeightRequest="48" />
                 <!-- SUMMARY -->
                 <Grid ColumnDefinitions="*,*,*"
                       ColumnSpacing="16">

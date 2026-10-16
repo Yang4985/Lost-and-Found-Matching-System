@@ -32,6 +32,8 @@ namespace LostAndFound.Pages
         }
 
 
+        private async void OnWorkflowClicked(object? sender, EventArgs e) => await Shell.Current.GoToAsync("//review-workflow");
+
         private void RefreshDashboard()
         {
             SignedInLabel.Text =

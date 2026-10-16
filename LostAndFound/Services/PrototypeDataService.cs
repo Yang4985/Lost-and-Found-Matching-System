@@ -4,7 +4,7 @@ using LostAndFound.Models;
 
 namespace LostAndFound.Services;
 
-public class PrototypeDataService
+public partial class PrototypeDataService
 {
     private readonly string? _storagePath;
     private readonly object _gate = new();
@@ -25,11 +25,28 @@ public class PrototypeDataService
             throw new InvalidDataException("The report store is missing report collections.");
         foreach (var report in snapshot.Lost) LostReports.Add(report);
         foreach (var report in snapshot.Found) FoundReports.Add(report);
+        RestoreWorkflow(snapshot);
         _nextLostId = checked(LostReports.Select(r => r.ID).DefaultIfEmpty(0).Max() + 1);
         _nextFoundId = checked(FoundReports.Select(r => r.ID).DefaultIfEmpty(0).Max() + 1);
     }
 
-    public void AddLostReport(LostItemReport report)
+    // Form submissions validate before assigning IDs, mutating collections or touching storage.
+    public bool TrySubmitLostReport(LostItemReport? report, out string errorMessage)
+    {
+        if (!new ValidationService().ValidateLostReport(report, out errorMessage)) return false;
+        AddLostReport(report!);
+        return true;
+    }
+
+    internal bool TrySubmitFoundReport(FoundItemReport? report, out string errorMessage)
+    {
+        if (!new ValidationService().ValidateFoundReport(report, out errorMessage)) return false;
+        AddFoundReport(report!);
+        return true;
+    }
+
+    // Low-level insertion remains available for controlled fixtures and existing callers.
+    internal void AddLostReport(LostItemReport report)
     {
         ArgumentNullException.ThrowIfNull(report);
         lock (_gate)
@@ -43,7 +60,7 @@ public class PrototypeDataService
         }
     }
 
-    public void AddFoundReport(FoundItemReport report)
+    internal void AddFoundReport(FoundItemReport report)
     {
         ArgumentNullException.ThrowIfNull(report);
         lock (_gate)
@@ -56,7 +73,7 @@ public class PrototypeDataService
             catch { FoundReports.Remove(report); throw; }
         }
     }
-    public void MarkFoundReportReturned(int reportId)
+    internal void MarkFoundReportReturned(int reportId)
     {
         lock (_gate)
         {
@@ -95,7 +112,7 @@ public class PrototypeDataService
             if (_storagePath is null) return;
             var path = Path.GetFullPath(_storagePath);
             Directory.CreateDirectory(Path.GetDirectoryName(path)!);
-            var bytes = JsonSerializer.SerializeToUtf8Bytes(new ReportSnapshot(LostReports.ToList(), FoundReports.ToList()));
+            var bytes = JsonSerializer.SerializeToUtf8Bytes(CreateSnapshot());
             var temporary = path + "." + Guid.NewGuid().ToString("N") + ".tmp";
             try
             {
@@ -119,7 +136,7 @@ public class PrototypeDataService
             foreach (var found in FoundReports.Where(r => IsEligible(r.Status)))
             {
                 var score = _matching.CalculateMatchScore(lost, found);
-                if (score > 0)
+                if (score > 0 && !_reviews.Any(r => r.LostId == lost.ID && r.FoundId == found.ID))
                     results.Add(new PrototypeMatch(lost, found, score, _matching.ExplainMatch(lost, found)));
             }
             return results.OrderByDescending(r => r.Score)
@@ -129,7 +146,12 @@ public class PrototypeDataService
 
     public static bool IsEligible(ItemReportStatus status) => status is
         ItemReportStatus.Submitted or ItemReportStatus.Available or ItemReportStatus.UnderReview;
-    public record ReportSnapshot(List<LostItemReport> Lost, List<FoundItemReport> Found);
+    public record ReportSnapshot(List<LostItemReport> Lost, List<FoundItemReport> Found)
+    {
+        public List<ReviewRecord> Reviews { get; init; } = [];
+        public List<ClaimRecord> Claims { get; init; } = [];
+        public List<AuditRecord> History { get; init; } = [];
+    }
 }
 
 public record PrototypeMatch(LostItemReport LostReport, FoundItemReport FoundReport, int Score, string Explanation)

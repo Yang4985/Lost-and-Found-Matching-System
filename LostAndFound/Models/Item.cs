@@ -2,6 +2,7 @@ namespace LostAndFound.Models
 {
     public class Item
     {
+        public string? ImagePath { get; set; }
         private string category;
         private string brand;
         private string name;

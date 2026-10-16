@@ -48,11 +48,9 @@ The system is intended to provide a centralised workflow for students to report 
 3. The decision is recorded in status history.
 4. A student user cannot perform the review action.
 
-## Initial prototype scope
+## Completed prototype implementation
 
-The application uses .NET MAUI, XAML, MVVM, and SQLite. The current repository provides a technical scaffold with navigation, local persistence, dependency injection, reusable controls, error handling, and light/dark themes. Core lost-and-found domain models have been introduced for items, users, match results, ownership claims, and status history.
-
-The current interface and repositories still contain parts of the original project-and-task sample. Lost-item submission, found-item registration, matching, claim review, and role-based access therefore remain planned prototype functions until their pages, repositories, and workflow logic are implemented.
+The Windows .NET MAUI prototype now implements reporting, optional images, aggregate validation, explainable matching, staff review, ownership claims, audit history, filtering and handover. Shared production services are verified by 100 automated test instances. Report/workflow persistence uses atomic local JSON snapshots rather than the scaffold's SQLite sample repositories. The staff session is the existing local demonstration account. See qa/current-traceability.md and qa/completed-workflow.md for test mappings, native observations and verification boundaries.
 
 ## Out of scope for the initial prototype
 

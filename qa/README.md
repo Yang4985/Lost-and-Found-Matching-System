@@ -1,3 +1,5 @@
+> Latest local verification and aggregated report validation: [final-verification.md](final-verification.md). Current requirement links: [current-traceability.md](current-traceability.md). The results below retain their historical version and scope.
+
 > Historical baseline documentation. For the current repair and retest status, see [fix-verification.md](fix-verification.md). Baseline failures remain preserved as before-fix evidence.
 
 # Member 3 QA baseline

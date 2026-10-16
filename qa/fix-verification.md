@@ -1,3 +1,5 @@
+> Latest local verification and aggregated report validation: [final-verification.md](final-verification.md). Current requirement links: [current-traceability.md](current-traceability.md). The results below retain their historical version and scope.
+
 # D001–D003 correction and verification — 7 October 2026
 
 ## Evidence and release decision

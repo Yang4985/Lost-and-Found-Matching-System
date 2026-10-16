@@ -52,6 +52,8 @@
     Route="matches"
     FlyoutItemIsVisible="False" />
 
+    <ShellContent Title="Search Reports" ContentTemplate="{DataTemplate pages:SearchReportsPage}" Route="search-reports" />
+    <ShellContent Title="Staff Review and Claims" ContentTemplate="{DataTemplate pages:ReviewWorkflowPage}" Route="review-workflow" FlyoutItemIsVisible="False" />
     <Shell.FlyoutFooter>
         <Grid Padding="15">
             <sf:SfSegmentedControl x:Name="ThemeSegmentedControl" 

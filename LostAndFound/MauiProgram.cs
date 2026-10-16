@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Maui;
+using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
 using Syncfusion.Maui.Toolkit.Hosting;
 
@@ -50,10 +50,12 @@ namespace LostAndFound
             builder.Services.AddSingleton<SeedDataService>();
             builder.Services.AddSingleton<ModalErrorHandler>();
             builder.Services.AddSingleton<PrototypeDataService>(_ => new PrototypeDataService(
-                Path.Combine(FileSystem.AppDataDirectory, "lost-found-reports.json")));
+                Environment.GetEnvironmentVariable("LOSTFOUND_STORE") ?? Path.Combine(FileSystem.AppDataDirectory, "lost-found-reports.json")));
             builder.Services.AddTransient<LostReportPage>();
             builder.Services.AddTransient<FoundReportPage>();
             builder.Services.AddTransient<MatchesPage>();
+            builder.Services.AddTransient<ReviewWorkflowPage>();
+            builder.Services.AddTransient<SearchReportsPage>();
             builder.Services.AddSingleton<MainPageModel>();
             builder.Services.AddSingleton<ProjectListPageModel>();
             builder.Services.AddSingleton<ManageMetaPageModel>();

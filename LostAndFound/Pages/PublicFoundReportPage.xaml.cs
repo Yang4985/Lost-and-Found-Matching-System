@@ -6,8 +6,21 @@ namespace LostAndFound.Pages
     public partial class PublicFoundReportPage : ContentPage
     {
         private readonly PrototypeDataService _data;
-        private readonly ValidationService _validationService =
-            new ValidationService();
+        private string? _photoPath;
+        private async void OnAttachPhotoClicked(object? sender, EventArgs e)
+        {
+            try
+            {
+                var photo = await FilePicker.Default.PickAsync(new PickOptions { PickerTitle = "Choose an optional item image", FileTypes = FilePickerFileType.Images });
+                if (photo is null) return;
+                await using var stream = await photo.OpenReadAsync();
+                _photoPath = await ItemPhotoService.SaveAsync(stream, Path.Combine(FileSystem.AppDataDirectory, "item-photos"));
+                PhotoLabel.Text = "Image attached";
+            }
+            catch (Exception error) when (error is IOException or UnauthorizedAccessException or InvalidDataException)
+            { PhotoLabel.Text = error.Message; }
+        }
+
 
         public PublicFoundReportPage(PrototypeDataService data)
         {
@@ -30,39 +43,28 @@ namespace LostAndFound.Pages
             object? sender,
             EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(ItemNameEntry.Text) ||
-                CategoryPicker.SelectedItem is null ||
-                string.IsNullOrWhiteSpace(LocationEntry.Text) ||
-                string.IsNullOrWhiteSpace(DescriptionEditor.Text))
-            {
-                ValidationLabel.Text =
-                    "Please complete all required fields.";
-
-                ValidationLabel.IsVisible = true;
-                return;
-            }
-
             var report = new FoundItemReport
             {
                 Item = new Item
                 {
+                    ImagePath = _photoPath,
                     Brand = BrandEntry.Text?.Trim() ?? string.Empty,
                     Color = ColourEntry.Text?.Trim() ?? string.Empty
                 },
 
-                Name = ItemNameEntry.Text.Trim(),
+                Name = ItemNameEntry.Text?.Trim() ?? string.Empty,
 
                 Category =
-                    CategoryPicker.SelectedItem.ToString()!,
+                    CategoryPicker.SelectedItem?.ToString() ?? string.Empty,
 
                 Location =
-                    LocationEntry.Text.Trim(),
+                    LocationEntry.Text?.Trim() ?? string.Empty,
 
                 DateFound =
                     FoundDatePicker.Date ?? DateTime.Today,
 
                 Description =
-                    DescriptionEditor.Text.Trim(),
+                    DescriptionEditor.Text?.Trim() ?? string.Empty,
 
                 StorageLocation =
                     "Pending staff intake",
@@ -70,20 +72,16 @@ namespace LostAndFound.Pages
                 RegisteredByStaffID = 0
             };
 
-            if (!_validationService.ValidateFoundReport(
-                    report,
-                    out string errorMessage))
-            {
-                ValidationLabel.Text = errorMessage;
-                ValidationLabel.IsVisible = true;
-                return;
-            }
-
-            ValidationLabel.IsVisible = false;
-
             try
             {
-                _data.AddFoundReport(report);
+                if (!_data.TrySubmitPublicFoundReport(report, out string errorMessage))
+                {
+                    ValidationLabel.Text = errorMessage;
+                    ReportFormFeedback.Show(this, errorMessage);
+                    ValidationLabel.IsVisible = true;
+                    return;
+                }
+                ValidationLabel.IsVisible = false;
             }
             catch (Exception error)
                 when (error is IOException
@@ -116,6 +114,8 @@ namespace LostAndFound.Pages
 
         private void ClearForm()
         {
+                ReportFormFeedback.Show(this, string.Empty);
+                _photoPath = null; PhotoLabel.Text = "No image selected";
             ItemNameEntry.Text = string.Empty;
             BrandEntry.Text = string.Empty;
             ColourEntry.Text = string.Empty;
