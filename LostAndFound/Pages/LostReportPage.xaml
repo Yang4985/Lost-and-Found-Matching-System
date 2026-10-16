@@ -9,7 +9,9 @@
             <Label Text="Report a lost item" Style="{StaticResource Headline}" />
             <Label Text="Enter the information you remember. Fields marked * are required." />
 
-            <Entry x:Name="ItemNameEntry" Placeholder="Item name *" />
+            <Button Text="Attach optional PNG or JPEG" Clicked="OnAttachPhotoClicked" MinimumHeightRequest="48" />
+                <Label x:Name="PhotoLabel" Text="No image selected" />
+                <Entry x:Name="ItemNameEntry" Placeholder="Item name *" />
             <Picker x:Name="CategoryPicker" Title="Category *" />
             <Entry x:Name="BrandEntry" Placeholder="Brand (optional)" />
             <Entry x:Name="ColourEntry" Placeholder="Colour (optional)" />

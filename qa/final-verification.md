@@ -1,3 +1,5 @@
+Current final workflow and 100-case verification: [completed-workflow.md](completed-workflow.md). The following preserves the earlier 76-case validation milestone.
+
 # Aggregated report validation and final verification
 
 Verification owner: Zelong Liang. Local verification: 16 October 2026 (Pacific/Auckland).

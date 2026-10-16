@@ -8,5 +8,8 @@
     <Compile Include="../LostAndFound/Services/PrototypeDataService.cs" />
     <Compile Include="../LostAndFound/Services/ValidationService.cs" />
     <Compile Include="../LostAndFound/Services/MatchingService.cs" />
+  <Compile Include="../LostAndFound/Services/ReportWorkflow.cs" />
+    <Compile Include="../LostAndFound/Services/StaffSessionService.cs" />
+  <Compile Include="../LostAndFound/Services/ItemPhotoService.cs" />
   </ItemGroup>
 </Project>

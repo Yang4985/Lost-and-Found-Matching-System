@@ -6,6 +6,21 @@ namespace LostAndFound.Pages
     public partial class PublicFoundReportPage : ContentPage
     {
         private readonly PrototypeDataService _data;
+        private string? _photoPath;
+        private async void OnAttachPhotoClicked(object? sender, EventArgs e)
+        {
+            try
+            {
+                var photo = await FilePicker.Default.PickAsync(new PickOptions { PickerTitle = "Choose an optional item image", FileTypes = FilePickerFileType.Images });
+                if (photo is null) return;
+                await using var stream = await photo.OpenReadAsync();
+                _photoPath = await ItemPhotoService.SaveAsync(stream, Path.Combine(FileSystem.AppDataDirectory, "item-photos"));
+                PhotoLabel.Text = "Image attached";
+            }
+            catch (Exception error) when (error is IOException or UnauthorizedAccessException)
+            { PhotoLabel.Text = error.Message; }
+        }
+
 
         public PublicFoundReportPage(PrototypeDataService data)
         {
@@ -32,6 +47,7 @@ namespace LostAndFound.Pages
             {
                 Item = new Item
                 {
+                    ImagePath = _photoPath,
                     Brand = BrandEntry.Text?.Trim() ?? string.Empty,
                     Color = ColourEntry.Text?.Trim() ?? string.Empty
                 },
@@ -58,7 +74,7 @@ namespace LostAndFound.Pages
 
             try
             {
-                if (!_data.TrySubmitFoundReport(report, out string errorMessage))
+                if (!_data.TrySubmitPublicFoundReport(report, out string errorMessage))
                 {
                     ValidationLabel.Text = errorMessage;
                     ValidationLabel.IsVisible = true;
@@ -97,6 +113,7 @@ namespace LostAndFound.Pages
 
         private void ClearForm()
         {
+                _photoPath = null; PhotoLabel.Text = "No image selected";
             ItemNameEntry.Text = string.Empty;
             BrandEntry.Text = string.Empty;
             ColourEntry.Text = string.Empty;

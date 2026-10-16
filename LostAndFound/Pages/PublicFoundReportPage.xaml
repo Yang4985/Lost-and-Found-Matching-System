@@ -49,7 +49,9 @@
                         <Grid ColumnDefinitions="*,*"
                               ColumnSpacing="16">
 
-                            <Entry Grid.Column="0"
+                            <Button Text="Attach optional PNG or JPEG" Clicked="OnAttachPhotoClicked" MinimumHeightRequest="48" />
+                <Label x:Name="PhotoLabel" Text="No image selected" />
+                <Entry Grid.Column="0"
                                    x:Name="ItemNameEntry"
                                    Placeholder="Item name *"
                                    PlaceholderColor="#8D8D96"
