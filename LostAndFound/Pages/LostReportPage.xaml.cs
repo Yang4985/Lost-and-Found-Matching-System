@@ -17,7 +17,7 @@
                 _photoPath = await ItemPhotoService.SaveAsync(stream, Path.Combine(FileSystem.AppDataDirectory, "item-photos"));
                 PhotoLabel.Text = "Image attached";
             }
-            catch (Exception error) when (error is IOException or UnauthorizedAccessException)
+            catch (Exception error) when (error is IOException or UnauthorizedAccessException or InvalidDataException)
             { PhotoLabel.Text = error.Message; }
         }
 
@@ -57,6 +57,7 @@
                 if (!_data.TrySubmitLostReport(report, out string errorMessage))
                 {
                     ValidationLabel.Text = errorMessage;
+                    ReportFormFeedback.Show(this, errorMessage);
                     ValidationLabel.IsVisible = true;
                     return;
                 }
@@ -83,6 +84,7 @@
 
         private void ClearForm()
             {
+                ReportFormFeedback.Show(this, string.Empty);
                 _photoPath = null; PhotoLabel.Text = "No image selected";
                 ItemNameEntry.Text = string.Empty;
                 BrandEntry.Text = string.Empty;

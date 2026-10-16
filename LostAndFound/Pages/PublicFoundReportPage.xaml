@@ -1,129 +1,70 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
-             x:Class="LostAndFound.Pages.PublicFoundReportPage"
-             Title="Report Found Item"
-             BackgroundColor="#151517">
+<?xml version='1.0' encoding='utf-8'?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:sys="clr-namespace:System;assembly=System.Runtime" x:Class="LostAndFound.Pages.PublicFoundReportPage" Title="Report Found Item" BackgroundColor="#151517">
 
     <ScrollView>
 
-        <Grid Padding="32"
-              MaximumWidthRequest="950"
-              HorizontalOptions="Center">
+        <Grid Padding="32" MaximumWidthRequest="950" HorizontalOptions="Center">
 
             <VerticalStackLayout Spacing="24">
 
                 <!-- HEADER -->
                 <VerticalStackLayout Spacing="5">
 
-                    <Label Text="Report a Found Item"
-                           FontSize="32"
-                           FontAttributes="Bold"
-                           TextColor="#B69CFF" />
+                    <Label Text="Report a Found Item" FontSize="32" FontAttributes="Bold" TextColor="#B69CFF"/>
 
-                    <Label Text="Tell us what you found and where you found it. Campus staff will review the report."
-                           FontSize="15"
-                           TextColor="#A9A9B2" />
+                    <Label Text="Tell us what you found and where you found it. Campus staff will review the report." FontSize="15" TextColor="#A9A9B2"/>
 
                 </VerticalStackLayout>
 
 
                 <!-- FORM CARD -->
-                <Border Padding="26"
-                        BackgroundColor="#1D1D21"
-                        Stroke="#33333A"
-                        StrokeThickness="1"
-                        StrokeShape="RoundRectangle 18">
+                <Border Padding="26" BackgroundColor="#1D1D21" Stroke="#33333A" StrokeThickness="1" StrokeShape="RoundRectangle 18">
 
                     <VerticalStackLayout Spacing="18">
 
-                        <Label Text="Item Details"
-                               FontSize="22"
-                               FontAttributes="Bold"
-                               TextColor="White" />
+                        <Label Text="Item Details" FontSize="22" FontAttributes="Bold" TextColor="White"/>
 
 
                         <!-- NAME + CATEGORY -->
-                        <Grid ColumnDefinitions="*,*"
-                              ColumnSpacing="16">
+                        <Button Text="Attach optional PNG or JPEG" Clicked="OnAttachPhotoClicked" MinimumHeightRequest="48"/>
+                <Label x:Name="PhotoLabel" Text="No image selected"/>
+<Grid ColumnDefinitions="*,*" ColumnSpacing="16">
 
-                            <Button Text="Attach optional PNG or JPEG" Clicked="OnAttachPhotoClicked" MinimumHeightRequest="48" />
-                <Label x:Name="PhotoLabel" Text="No image selected" />
-                <Entry Grid.Column="0"
-                                   x:Name="ItemNameEntry"
-                                   Placeholder="Item name *"
-                                   PlaceholderColor="#8D8D96"
-                                   TextColor="White" />
+                            
+                <VerticalStackLayout Spacing="3" Grid.Column="0"><Entry x:Name="ItemNameEntry" Placeholder="Item name *" PlaceholderColor="#8D8D96" TextColor="White" SemanticProperties.Description="Item name *"/>
 
-                            <Picker Grid.Column="1"
-                                    x:Name="CategoryPicker"
-                                    Title="Category *"
-                                    TitleColor="#8D8D96"
-                                    TextColor="White" />
+                            <Label x:Name="ItemNameEntryError" IsVisible="False" TextColor="#FF9EAA"/></VerticalStackLayout><VerticalStackLayout Spacing="3" Grid.Column="1"><Picker x:Name="CategoryPicker" Title="Category *" TitleColor="#8D8D96" TextColor="White" SemanticProperties.Description="Category *"/>
 
-                        </Grid>
+                        <Label x:Name="CategoryPickerError" IsVisible="False" TextColor="#FF9EAA"/></VerticalStackLayout></Grid>
 
 
                         <!-- BRAND + COLOUR -->
-                        <Grid ColumnDefinitions="*,*"
-                              ColumnSpacing="16">
+                        <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
 
-                            <Entry Grid.Column="0"
-                                   x:Name="BrandEntry"
-                                   Placeholder="Brand (optional)"
-                                   PlaceholderColor="#8D8D96"
-                                   TextColor="White" />
+                            <Entry Grid.Column="0" x:Name="BrandEntry" Placeholder="Brand (optional)" PlaceholderColor="#8D8D96" TextColor="White" SemanticProperties.Description="Brand (optional)"/>
 
-                            <Entry Grid.Column="1"
-                                   x:Name="ColourEntry"
-                                   Placeholder="Colour (optional)"
-                                   PlaceholderColor="#8D8D96"
-                                   TextColor="White" />
+                            <Entry Grid.Column="1" x:Name="ColourEntry" Placeholder="Colour (optional)" PlaceholderColor="#8D8D96" TextColor="White" SemanticProperties.Description="Colour (optional)"/>
 
                         </Grid>
 
 
                         <!-- LOCATION + DATE -->
-                        <Grid ColumnDefinitions="*,*"
-                              ColumnSpacing="16">
+                        <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
 
-                            <Entry Grid.Column="0"
-                                   x:Name="LocationEntry"
-                                   Placeholder="Location found *"
-                                   PlaceholderColor="#8D8D96"
-                                   TextColor="White" />
+                            <VerticalStackLayout Spacing="3" Grid.Column="0"><Entry x:Name="LocationEntry" Placeholder="Location found *" PlaceholderColor="#8D8D96" TextColor="White" SemanticProperties.Description="Location found *"/>
 
-                            <DatePicker Grid.Column="1"
-                                        x:Name="FoundDatePicker"
-                                        MaximumDate="{x:Static sys:DateTime.Today}"
-                                        TextColor="White" />
+                            <Label x:Name="LocationEntryError" IsVisible="False" TextColor="#FF9EAA"/></VerticalStackLayout><VerticalStackLayout Spacing="3" Grid.Column="1"><DatePicker x:Name="FoundDatePicker" MaximumDate="{x:Static sys:DateTime.Today}" TextColor="White" SemanticProperties.Description="FoundDate"/>
 
-                        </Grid>
+                        <Label x:Name="FoundDatePickerError" IsVisible="False" TextColor="#FF9EAA"/></VerticalStackLayout></Grid>
 
 
-                        <Editor x:Name="DescriptionEditor"
-                                Placeholder="Description *"
-                                PlaceholderColor="#8D8D96"
-                                TextColor="White"
-                                AutoSize="TextChanges"
-                                MinimumHeightRequest="110" />
+                        <VerticalStackLayout Spacing="3"><Editor x:Name="DescriptionEditor" Placeholder="Description *" PlaceholderColor="#8D8D96" TextColor="White" AutoSize="TextChanges" MinimumHeightRequest="110" SemanticProperties.Description="Description *"/>
 
 
-                        <Label x:Name="ValidationLabel"
-                               TextColor="#FF6B6B"
-                               FontAttributes="Bold"
-                               IsVisible="False" />
+                        <Label x:Name="DescriptionEditorError" IsVisible="False" TextColor="#FF9EAA"/></VerticalStackLayout><Label x:Name="ValidationLabel" TextColor="#FF6B6B" FontAttributes="Bold" IsVisible="False"/>
 
 
-                        <Button Text="Submit Found Item Report"
-                                Clicked="OnSubmitClicked"
-                                BackgroundColor="#3E7C5C"
-                                TextColor="White"
-                                FontAttributes="Bold"
-                                HeightRequest="50"
-                                CornerRadius="10" />
+                        <Button Text="Submit Found Item Report" Clicked="OnSubmitClicked" BackgroundColor="#3E7C5C" TextColor="White" FontAttributes="Bold" HeightRequest="50" CornerRadius="10"/>
 
                     </VerticalStackLayout>
 
@@ -131,22 +72,14 @@
 
 
                 <!-- INFO -->
-                <Border Padding="16"
-                        BackgroundColor="#211E2C"
-                        Stroke="#463A68"
-                        StrokeShape="RoundRectangle 12">
+                <Border Padding="16" BackgroundColor="#211E2C" Stroke="#463A68" StrokeShape="RoundRectangle 12">
 
-                    <Label Text="After submission, authorised campus staff will review the report, assign a storage location if the item is handed in, and compare it with lost-item reports."
-                           TextColor="#D0C8E8"
-                           FontSize="13" />
+                    <Label Text="After submission, authorised campus staff will review the report, assign a storage location if the item is handed in, and compare it with lost-item reports." TextColor="#D0C8E8" FontSize="13"/>
 
                 </Border>
 
 
-                <Button Text="Back to Home"
-                        Clicked="OnBackClicked"
-                        BackgroundColor="Transparent"
-                        TextColor="#B69CFF" />
+                <Button Text="Back to Home" Clicked="OnBackClicked" BackgroundColor="Transparent" TextColor="#B69CFF"/>
 
             </VerticalStackLayout>
 

@@ -1,168 +1,80 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
-             x:Class="LostAndFound.Pages.FoundReportPage"
-             Title="Found Reports"
-             BackgroundColor="#151517">
+<?xml version='1.0' encoding='utf-8'?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:sys="clr-namespace:System;assembly=System.Runtime" x:Class="LostAndFound.Pages.FoundReportPage" Title="Found Reports" BackgroundColor="#151517">
 
     <ScrollView>
 
-        <VerticalStackLayout
-            Padding="32"
-            Spacing="26"
-            MaximumWidthRequest="1100"
-            HorizontalOptions="Fill">
+        <VerticalStackLayout Padding="32" Spacing="26" MaximumWidthRequest="1100" HorizontalOptions="Fill">
 
-            <Button
-                 Text="← Back to Staff Dashboard"
-                 Clicked="OnBackToDashboardClicked"
-                 BackgroundColor="Transparent"
-                 TextColor="#B69CFF"
-                 FontAttributes="Bold"
-                 HorizontalOptions="Start"
-                 Padding="0,8" />
+            <Button Text="← Back to Staff Dashboard" Clicked="OnBackToDashboardClicked" BackgroundColor="Transparent" TextColor="#B69CFF" FontAttributes="Bold" HorizontalOptions="Start" Padding="0,8"/>
 
 
             <!-- PAGE HEADER -->
             <VerticalStackLayout Spacing="4">
 
-                <Label
-                    Text="Found Reports"
-                    FontSize="32"
-                    FontAttributes="Bold"
-                    TextColor="#B69CFF" />
+                <Label Text="Found Reports" FontSize="32" FontAttributes="Bold" TextColor="#B69CFF"/>
 
-                <Label
-                    Text="Register found property and manage items returned to their owners."
-                    FontSize="15"
-                    TextColor="#A9A9B2" />
+                <Label Text="Register found property and manage items returned to their owners." FontSize="15" TextColor="#A9A9B2"/>
 
             </VerticalStackLayout>
 
 
             <!-- REGISTER FOUND ITEM CARD -->
-            <Border
-                Padding="24"
-                BackgroundColor="#1D1D21"
-                Stroke="#33333A"
-                StrokeThickness="1"
-                StrokeShape="RoundRectangle 16">
+            <Border Padding="24" BackgroundColor="#1D1D21" Stroke="#33333A" StrokeThickness="1" StrokeShape="RoundRectangle 16">
 
                 <VerticalStackLayout Spacing="18">
 
                     <VerticalStackLayout Spacing="3">
 
-                        <Label
-                            Text="Register a Found Item"
-                            FontSize="24"
-                            FontAttributes="Bold"
-                            TextColor="White" />
+                        <Label Text="Register a Found Item" FontSize="24" FontAttributes="Bold" TextColor="White"/>
 
-                        <Label
-                            Text="Staff can register items handed in to campus services."
-                            FontSize="14"
-                            TextColor="#A9A9B2" />
+                        <Label Text="Staff can register items handed in to campus services." FontSize="14" TextColor="#A9A9B2"/>
 
                     </VerticalStackLayout>
 
 
                     <!-- NAME + CATEGORY -->
-                    <Grid ColumnDefinitions="*,*"
-                          ColumnSpacing="16">
+                    <Button Text="Attach optional PNG or JPEG" Clicked="OnAttachPhotoClicked" MinimumHeightRequest="48"/>
+                <Label x:Name="PhotoLabel" Text="No image selected"/>
+<Grid ColumnDefinitions="*,*" ColumnSpacing="16">
 
-                        <Button Text="Attach optional PNG or JPEG" Clicked="OnAttachPhotoClicked" MinimumHeightRequest="48" />
-                <Label x:Name="PhotoLabel" Text="No image selected" />
-                <Entry
-                            Grid.Column="0"
-                            x:Name="ItemNameEntry"
-                            Placeholder="Item name *"
-                            PlaceholderColor="#8D8D96"
-                            TextColor="White" />
+                        
+                <VerticalStackLayout Spacing="3" Grid.Column="0"><Entry x:Name="ItemNameEntry" Placeholder="Item name *" PlaceholderColor="#8D8D96" TextColor="White" SemanticProperties.Description="Item name *"/>
 
-                        <Picker
-                            Grid.Column="1"
-                            x:Name="CategoryPicker"
-                            Title="Category *"
-                            TitleColor="#8D8D96"
-                            TextColor="White" />
+                        <Label x:Name="ItemNameEntryError" IsVisible="False" TextColor="#FF9EAA"/></VerticalStackLayout><VerticalStackLayout Spacing="3" Grid.Column="1"><Picker x:Name="CategoryPicker" Title="Category *" TitleColor="#8D8D96" TextColor="White" SemanticProperties.Description="Category *"/>
 
-                    </Grid>
+                    <Label x:Name="CategoryPickerError" IsVisible="False" TextColor="#FF9EAA"/></VerticalStackLayout></Grid>
 
 
                     <!-- BRAND + COLOUR -->
-                    <Grid ColumnDefinitions="*,*"
-                          ColumnSpacing="16">
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
 
-                        <Entry
-                            Grid.Column="0"
-                            x:Name="BrandEntry"
-                            Placeholder="Brand (optional)"
-                            PlaceholderColor="#8D8D96"
-                            TextColor="White" />
+                        <Entry Grid.Column="0" x:Name="BrandEntry" Placeholder="Brand (optional)" PlaceholderColor="#8D8D96" TextColor="White" SemanticProperties.Description="Brand (optional)"/>
 
-                        <Entry
-                            Grid.Column="1"
-                            x:Name="ColourEntry"
-                            Placeholder="Colour (optional)"
-                            PlaceholderColor="#8D8D96"
-                            TextColor="White" />
+                        <Entry Grid.Column="1" x:Name="ColourEntry" Placeholder="Colour (optional)" PlaceholderColor="#8D8D96" TextColor="White" SemanticProperties.Description="Colour (optional)"/>
 
                     </Grid>
 
 
                     <!-- LOCATION + DATE -->
-                    <Grid ColumnDefinitions="*,*"
-                          ColumnSpacing="16">
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
 
-                        <Entry
-                            Grid.Column="0"
-                            x:Name="LocationEntry"
-                            Placeholder="Location found *"
-                            PlaceholderColor="#8D8D96"
-                            TextColor="White" />
+                        <VerticalStackLayout Spacing="3" Grid.Column="0"><Entry x:Name="LocationEntry" Placeholder="Location found *" PlaceholderColor="#8D8D96" TextColor="White" SemanticProperties.Description="Location found *"/>
 
-                        <DatePicker
-                            Grid.Column="1"
-                            x:Name="FoundDatePicker"
-                            MaximumDate="{x:Static sys:DateTime.Today}"
-                            TextColor="White" />
+                        <Label x:Name="LocationEntryError" IsVisible="False" TextColor="#FF9EAA"/></VerticalStackLayout><VerticalStackLayout Spacing="3" Grid.Column="1"><DatePicker x:Name="FoundDatePicker" MaximumDate="{x:Static sys:DateTime.Today}" TextColor="White" SemanticProperties.Description="FoundDate"/>
 
-                    </Grid>
+                    <Label x:Name="FoundDatePickerError" IsVisible="False" TextColor="#FF9EAA"/></VerticalStackLayout></Grid>
 
 
-                    <Editor
-                        x:Name="DescriptionEditor"
-                        Placeholder="Description *"
-                        PlaceholderColor="#8D8D96"
-                        TextColor="White"
-                        AutoSize="TextChanges"
-                        MinimumHeightRequest="100" />
+                    <VerticalStackLayout Spacing="3"><Editor x:Name="DescriptionEditor" Placeholder="Description *" PlaceholderColor="#8D8D96" TextColor="White" AutoSize="TextChanges" MinimumHeightRequest="100" SemanticProperties.Description="Description *"/>
 
 
-                    <Entry
-                        x:Name="StorageEntry"
-                        Placeholder="Storage location *"
-                        PlaceholderColor="#8D8D96"
-                        TextColor="White" />
+                    <Label x:Name="DescriptionEditorError" IsVisible="False" TextColor="#FF9EAA"/></VerticalStackLayout><VerticalStackLayout Spacing="3"><Entry x:Name="StorageEntry" Placeholder="Storage location *" PlaceholderColor="#8D8D96" TextColor="White" SemanticProperties.Description="Storage location *"/>
 
 
-                    <Label
-                        x:Name="ValidationLabel"
-                        TextColor="#FF6B6B"
-                        FontAttributes="Bold"
-                        IsVisible="False" />
+                    <Label x:Name="StorageEntryError" IsVisible="False" TextColor="#FF9EAA"/></VerticalStackLayout><Label x:Name="ValidationLabel" TextColor="#FF6B6B" FontAttributes="Bold" IsVisible="False"/>
 
 
-                    <Button
-                        Text="Register Found Item"
-                        Clicked="OnSaveClicked"
-                        BackgroundColor="#5930DB"
-                        TextColor="White"
-                        FontAttributes="Bold"
-                        HeightRequest="50"
-                        CornerRadius="10" />
+                    <Button Text="Register Found Item" Clicked="OnSaveClicked" BackgroundColor="#5930DB" TextColor="White" FontAttributes="Bold" HeightRequest="50" CornerRadius="10"/>
 
                 </VerticalStackLayout>
 
@@ -173,31 +85,20 @@
 
                 <VerticalStackLayout Spacing="2">
 
-                    <Label Text="Public Found-Item Submissions"
-               FontSize="24"
-               FontAttributes="Bold"
-               TextColor="White" />
+                    <Label Text="Public Found-Item Submissions" FontSize="24" FontAttributes="Bold" TextColor="White"/>
 
-                    <Label Text="Reports submitted by students, staff or visitors for staff review."
-               FontSize="14"
-               TextColor="#A9A9B2" />
+                    <Label Text="Reports submitted by students, staff or visitors for staff review." FontSize="14" TextColor="#A9A9B2"/>
 
                 </VerticalStackLayout>
 
 
-                <CollectionView x:Name="PublicSubmissionsView"
-                    MinimumHeightRequest="100">
+                <CollectionView x:Name="PublicSubmissionsView" MinimumHeightRequest="100">
 
                     <CollectionView.EmptyView>
 
-                        <Border Padding="20"
-                    BackgroundColor="#1D1D21"
-                    Stroke="#33333A"
-                    StrokeShape="RoundRectangle 14">
+                        <Border Padding="20" BackgroundColor="#1D1D21" Stroke="#33333A" StrokeShape="RoundRectangle 14">
 
-                            <Label Text="There are currently no public found-item submissions."
-                       HorizontalOptions="Center"
-                       TextColor="#A9A9B2" />
+                            <Label Text="There are currently no public found-item submissions." HorizontalOptions="Center" TextColor="#A9A9B2"/>
 
                         </Border>
 
@@ -208,53 +109,30 @@
 
                         <DataTemplate>
 
-                            <Border Padding="18"
-                        Margin="0,5"
-                        BackgroundColor="#1D1D21"
-                        Stroke="#463A68"
-                        StrokeShape="RoundRectangle 14">
+                            <Border Padding="18" Margin="0,5" BackgroundColor="#1D1D21" Stroke="#463A68" StrokeShape="RoundRectangle 14">
 
-                                <Grid ColumnDefinitions="*,Auto"
-                          ColumnSpacing="16">
+                                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
 
-                                    <VerticalStackLayout
-                            Grid.Column="0"
-                            Spacing="4">
+                                    <VerticalStackLayout Grid.Column="0" Spacing="4">
 
-                                        <Label Text="{Binding Name}"
-                                   FontSize="18"
-                                   FontAttributes="Bold"
-                                   TextColor="White" />
+                                        <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" TextColor="White"/>
 
-                                        <Label Text="{Binding Category}"
-                                   TextColor="#C6C6CE" />
+                                        <Label Text="{Binding Category}" TextColor="#C6C6CE"/>
 
-                                        <Label Text="{Binding Location, StringFormat='Found at: {0}'}"
-                                   TextColor="#A9A9B2" />
+                                        <Label Text="{Binding Location, StringFormat='Found at: {0}'}" TextColor="#A9A9B2"/>
 
-                                        <Label Text="{Binding DateFound, StringFormat='Found on: {0:dd MMM yyyy}'}"
-                                   TextColor="#A9A9B2" />
+                                        <Label Text="{Binding DateFound, StringFormat='Found on: {0:dd MMM yyyy}'}" TextColor="#A9A9B2"/>
 
-                                        <Label Text="{Binding Description, StringFormat='Description: {0}'}"
-                                   TextColor="#D0D0D7" />
+                                        <Label Text="{Binding Description, StringFormat='Description: {0}'}" TextColor="#D0D0D7"/>
 
-                                        <Label Text="Storage: Pending staff intake"
-                                   TextColor="#F0C27B" />
+                                        <Label Text="Storage: Pending staff intake" TextColor="#F0C27B"/>
 
                                     </VerticalStackLayout>
 
 
-                                    <Border Grid.Column="1"
-                                Padding="10,5"
-                                VerticalOptions="Start"
-                                BackgroundColor="#2C244A"
-                                StrokeThickness="0"
-                                StrokeShape="RoundRectangle 14">
+                                    <Border Grid.Column="1" Padding="10,5" VerticalOptions="Start" BackgroundColor="#2C244A" StrokeThickness="0" StrokeShape="RoundRectangle 14">
 
-                                        <Label Text="PUBLIC SUBMISSION"
-                                   FontSize="11"
-                                   FontAttributes="Bold"
-                                   TextColor="#C6B4FF" />
+                                        <Label Text="PUBLIC SUBMISSION" FontSize="11" FontAttributes="Bold" TextColor="#C6B4FF"/>
 
                                     </Border>
 
@@ -275,36 +153,20 @@
 
                 <VerticalStackLayout Spacing="2">
 
-                    <Label
-                        Text="Available Found Items"
-                        FontSize="24"
-                        FontAttributes="Bold"
-                        TextColor="White" />
+                    <Label Text="Available Found Items" FontSize="24" FontAttributes="Bold" TextColor="White"/>
 
-                    <Label
-                        Text="Select items that have been successfully returned to their owner."
-                        FontSize="14"
-                        TextColor="#A9A9B2" />
+                    <Label Text="Select items that have been successfully returned to their owner." FontSize="14" TextColor="#A9A9B2"/>
 
                 </VerticalStackLayout>
 
 
-                <CollectionView
-                    x:Name="AvailableReportsView"
-                    MinimumHeightRequest="90">
+                <CollectionView x:Name="AvailableReportsView" MinimumHeightRequest="90">
 
                     <CollectionView.EmptyView>
 
-                        <Border
-                            Padding="22"
-                            BackgroundColor="#1D1D21"
-                            Stroke="#33333A"
-                            StrokeShape="RoundRectangle 14">
+                        <Border Padding="22" BackgroundColor="#1D1D21" Stroke="#33333A" StrokeShape="RoundRectangle 14">
 
-                            <Label
-                                Text="There are currently no available found items."
-                                TextColor="#A9A9B2"
-                                HorizontalOptions="Center" />
+                            <Label Text="There are currently no available found items." TextColor="#A9A9B2" HorizontalOptions="Center"/>
 
                         </Border>
 
@@ -315,70 +177,34 @@
 
                         <DataTemplate>
 
-                            <Border
-                                Margin="0,5"
-                                Padding="18"
-                                BackgroundColor="#1D1D21"
-                                Stroke="#33333A"
-                                StrokeThickness="1"
-                                StrokeShape="RoundRectangle 14">
+                            <Border Margin="0,5" Padding="18" BackgroundColor="#1D1D21" Stroke="#33333A" StrokeThickness="1" StrokeShape="RoundRectangle 14">
 
-                                <Grid
-                                    ColumnDefinitions="Auto,*,Auto"
-                                    ColumnSpacing="16">
+                                <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="16">
 
                                     <!-- CHECKBOX -->
-                                    <CheckBox
-                                        Grid.Column="0"
-                                        VerticalOptions="Center"
-                                        Color="#7C5CFC"
-                                        CheckedChanged="OnReturnSelectionChanged" />
+                                    <CheckBox Grid.Column="0" VerticalOptions="Center" Color="#7C5CFC" CheckedChanged="OnReturnSelectionChanged"/>
 
 
                                     <!-- REPORT DETAILS -->
-                                    <VerticalStackLayout
-                                        Grid.Column="1"
-                                        Spacing="4">
+                                    <VerticalStackLayout Grid.Column="1" Spacing="4">
 
-                                        <Label
-                                            Text="{Binding Name}"
-                                            FontSize="18"
-                                            FontAttributes="Bold"
-                                            TextColor="White" />
+                                        <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" TextColor="White"/>
 
-                                        <Label
-                                            Text="{Binding Category}"
-                                            TextColor="#C6C6CE" />
+                                        <Label Text="{Binding Category}" TextColor="#C6C6CE"/>
 
-                                        <Label
-                                            Text="{Binding Location, StringFormat='Found at: {0}'}"
-                                            TextColor="#A9A9B2" />
+                                        <Label Text="{Binding Location, StringFormat='Found at: {0}'}" TextColor="#A9A9B2"/>
 
-                                        <Label
-                                            Text="{Binding StorageLocation, StringFormat='Stored at: {0}'}"
-                                            TextColor="#A9A9B2" />
+                                        <Label Text="{Binding StorageLocation, StringFormat='Stored at: {0}'}" TextColor="#A9A9B2"/>
 
-                                        <Label
-                                            Text="{Binding DateFound, StringFormat='Found on: {0:dd MMM yyyy}'}"
-                                            TextColor="#A9A9B2" />
+                                        <Label Text="{Binding DateFound, StringFormat='Found on: {0:dd MMM yyyy}'}" TextColor="#A9A9B2"/>
 
                                     </VerticalStackLayout>
 
 
                                     <!-- STATUS -->
-                                    <Border
-                                        Grid.Column="2"
-                                        Padding="10,5"
-                                        VerticalOptions="Start"
-                                        BackgroundColor="#243B2E"
-                                        StrokeThickness="0"
-                                        StrokeShape="RoundRectangle 14">
+                                    <Border Grid.Column="2" Padding="10,5" VerticalOptions="Start" BackgroundColor="#243B2E" StrokeThickness="0" StrokeShape="RoundRectangle 14">
 
-                                        <Label
-                                            Text="{Binding Status}"
-                                            TextColor="#72D59B"
-                                            FontSize="12"
-                                            FontAttributes="Bold" />
+                                        <Label Text="{Binding Status}" TextColor="#72D59B" FontSize="12" FontAttributes="Bold"/>
 
                                     </Border>
 
@@ -393,55 +219,30 @@
                 </CollectionView>
 
 
-                <Button
-                    Text="Mark Selected as Returned"
-                    Clicked="OnMarkReturnedClicked"
-                    BackgroundColor="#5930DB"
-                    TextColor="White"
-                    FontAttributes="Bold"
-                    HeightRequest="48"
-                    CornerRadius="10" />
+                <Button Text="Mark Selected as Returned" Clicked="OnMarkReturnedClicked" BackgroundColor="#5930DB" TextColor="White" FontAttributes="Bold" HeightRequest="48" CornerRadius="10"/>
 
             </VerticalStackLayout>
 
 
             <!-- RETURNED ITEMS -->
-            <VerticalStackLayout
-                Spacing="12"
-                Margin="0,14,0,30">
+            <VerticalStackLayout Spacing="12" Margin="0,14,0,30">
 
                 <VerticalStackLayout Spacing="2">
 
-                    <Label
-                        Text="Returned Items"
-                        FontSize="24"
-                        FontAttributes="Bold"
-                        TextColor="White" />
+                    <Label Text="Returned Items" FontSize="24" FontAttributes="Bold" TextColor="White"/>
 
-                    <Label
-                        Text="History of found items that have been returned to their owners."
-                        FontSize="14"
-                        TextColor="#A9A9B2" />
+                    <Label Text="History of found items that have been returned to their owners." FontSize="14" TextColor="#A9A9B2"/>
 
                 </VerticalStackLayout>
 
 
-                <CollectionView
-                    x:Name="ReturnedReportsView"
-                    MinimumHeightRequest="180">
+                <CollectionView x:Name="ReturnedReportsView" MinimumHeightRequest="180">
 
                     <CollectionView.EmptyView>
 
-                        <Border
-                            Padding="22"
-                            BackgroundColor="#1D1D21"
-                            Stroke="#33333A"
-                            StrokeShape="RoundRectangle 14">
+                        <Border Padding="22" BackgroundColor="#1D1D21" Stroke="#33333A" StrokeShape="RoundRectangle 14">
 
-                            <Label
-                                Text="No items have been returned yet."
-                                TextColor="#A9A9B2"
-                                HorizontalOptions="Center" />
+                            <Label Text="No items have been returned yet." TextColor="#A9A9B2" HorizontalOptions="Center"/>
 
                         </Border>
 
@@ -452,60 +253,28 @@
 
                         <DataTemplate>
 
-                            <Border
-                                Margin="0,5"
-                                Padding="18"
-                                BackgroundColor="#1D1D21"
-                                Stroke="#33333A"
-                                StrokeThickness="1"
-                                StrokeShape="RoundRectangle 14">
+                            <Border Margin="0,5" Padding="18" BackgroundColor="#1D1D21" Stroke="#33333A" StrokeThickness="1" StrokeShape="RoundRectangle 14">
 
-                                <Grid
-                                    ColumnDefinitions="*,Auto"
-                                    ColumnSpacing="16">
+                                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
 
-                                    <VerticalStackLayout
-                                        Grid.Column="0"
-                                        Spacing="4">
+                                    <VerticalStackLayout Grid.Column="0" Spacing="4">
 
-                                        <Label
-                                            Text="{Binding Name}"
-                                            FontSize="18"
-                                            FontAttributes="Bold"
-                                            TextColor="White" />
+                                        <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" TextColor="White"/>
 
-                                        <Label
-                                            Text="{Binding Category}"
-                                            TextColor="#C6C6CE" />
+                                        <Label Text="{Binding Category}" TextColor="#C6C6CE"/>
 
-                                        <Label
-                                            Text="{Binding Location, StringFormat='Found at: {0}'}"
-                                            TextColor="#A9A9B2" />
+                                        <Label Text="{Binding Location, StringFormat='Found at: {0}'}" TextColor="#A9A9B2"/>
 
-                                        <Label
-                                            Text="{Binding StorageLocation, StringFormat='Stored at: {0}'}"
-                                            TextColor="#A9A9B2" />
+                                        <Label Text="{Binding StorageLocation, StringFormat='Stored at: {0}'}" TextColor="#A9A9B2"/>
 
-                                        <Label
-                                            Text="{Binding ReturnedAt, StringFormat='Returned: {0:dd MMM yyyy HH:mm}'}"
-                                            TextColor="#A9A9B2" />
+                                        <Label Text="{Binding ReturnedAt, StringFormat='Returned: {0:dd MMM yyyy HH:mm}'}" TextColor="#A9A9B2"/>
 
                                     </VerticalStackLayout>
 
 
-                                    <Border
-                                        Grid.Column="1"
-                                        Padding="10,5"
-                                        VerticalOptions="Start"
-                                        BackgroundColor="#243747"
-                                        StrokeThickness="0"
-                                        StrokeShape="RoundRectangle 14">
+                                    <Border Grid.Column="1" Padding="10,5" VerticalOptions="Start" BackgroundColor="#243747" StrokeThickness="0" StrokeShape="RoundRectangle 14">
 
-                                        <Label
-                                            Text="RETURNED"
-                                            FontSize="12"
-                                            FontAttributes="Bold"
-                                            TextColor="#71B7FF" />
+                                        <Label Text="RETURNED" FontSize="12" FontAttributes="Bold" TextColor="#71B7FF"/>
 
                                     </Border>
 
