@@ -7,8 +7,6 @@ namespace LostAndFound.Pages
     public partial class FoundReportPage : ContentPage
     {
         private readonly PrototypeDataService _data;
-        private readonly ValidationService _validationService =
-            new ValidationService();
 
         private readonly ObservableCollection<FoundItemReport>
             _availableReports = new();
@@ -18,7 +16,7 @@ namespace LostAndFound.Pages
 
         private readonly HashSet<int> _selectedForReturn = new();
 
-        private readonly ObservableCollection<FoundItemReport> 
+        private readonly ObservableCollection<FoundItemReport>
             _publicSubmissions = new();
 
 
@@ -71,23 +69,7 @@ namespace LostAndFound.Pages
             object? sender,
             EventArgs e)
         {
-            // Required fields
-            if (string.IsNullOrWhiteSpace(ItemNameEntry.Text) ||
-                CategoryPicker.SelectedItem is null ||
-                string.IsNullOrWhiteSpace(LocationEntry.Text) ||
-                string.IsNullOrWhiteSpace(DescriptionEditor.Text) ||
-                string.IsNullOrWhiteSpace(StorageEntry.Text))
-            {
-                ValidationLabel.Text =
-                    "Please complete all required fields before saving.";
-
-                ValidationLabel.IsVisible = true;
-
-                return;
-            }
-
-
-            // Create the report first
+            // All validation is performed at the submission boundary.
             var report = new FoundItemReport
             {
                 Item = new Item
@@ -102,46 +84,38 @@ namespace LostAndFound.Pages
                 },
 
                 Name =
-                    ItemNameEntry.Text.Trim(),
+                    ItemNameEntry.Text?.Trim() ?? string.Empty,
 
                 Category =
-                    CategoryPicker.SelectedItem.ToString()!,
+                    CategoryPicker.SelectedItem?.ToString() ?? string.Empty,
 
                 Location =
-                    LocationEntry.Text.Trim(),
+                    LocationEntry.Text?.Trim() ?? string.Empty,
 
                 DateFound =
                     FoundDatePicker.Date
                     ?? DateTime.Today,
 
                 Description =
-                    DescriptionEditor.Text.Trim(),
+                    DescriptionEditor.Text?.Trim() ?? string.Empty,
 
                 StorageLocation =
-                    StorageEntry.Text.Trim(),
+                    StorageEntry.Text?.Trim() ?? string.Empty,
 
                 RegisteredByStaffID = 1
             };
 
 
-            // Central validation service
-            if (!_validationService.ValidateFoundReport(
-                    report,
-                    out string errorMessage))
-            {
-                ValidationLabel.Text = errorMessage;
-                ValidationLabel.IsVisible = true;
-
-                return;
-            }
-
-
-            ValidationLabel.IsVisible = false;
-
 
             try
             {
-                _data.AddFoundReport(report);
+                if (!_data.TrySubmitFoundReport(report, out string errorMessage))
+                {
+                    ValidationLabel.Text = errorMessage;
+                    ValidationLabel.IsVisible = true;
+                    return;
+                }
+                ValidationLabel.IsVisible = false;
             }
             catch (Exception error)
                 when (error is IOException

@@ -6,7 +6,6 @@
         public partial class LostReportPage : ContentPage
         {
             private readonly PrototypeDataService _data;
-            private readonly ValidationService _validationService = new ValidationService();
             public LostReportPage(PrototypeDataService data)
             {
                 InitializeComponent();
@@ -17,20 +16,7 @@
 
         private async void OnSaveClicked(object? sender, EventArgs e)
         {
-            // Existing required-field validation
-            if (string.IsNullOrWhiteSpace(ItemNameEntry.Text) ||
-                CategoryPicker.SelectedItem is null ||
-                string.IsNullOrWhiteSpace(LocationEntry.Text) ||
-                string.IsNullOrWhiteSpace(DescriptionEditor.Text))
-            {
-                ValidationLabel.Text =
-                    "Please complete the item name, category, location, and description.";
-
-                ValidationLabel.IsVisible = true;
-                return;
-            }
-
-            // Create the report
+            // The shared submission service validates all mandatory fields.
             var report = new LostItemReport
             {
                 Item = new Item
@@ -39,32 +25,26 @@
                     Color = ColourEntry.Text?.Trim() ?? string.Empty
                 },
 
-                Name = ItemNameEntry.Text.Trim(),
-                Category = CategoryPicker.SelectedItem.ToString()!,
-                Location = LocationEntry.Text.Trim(),
+                Name = ItemNameEntry.Text?.Trim() ?? string.Empty,
+                Category = CategoryPicker.SelectedItem?.ToString() ?? string.Empty,
+                Location = LocationEntry.Text?.Trim() ?? string.Empty,
                 DateLost = LostDatePicker.Date ?? DateTime.Today,
-                Description = DescriptionEditor.Text.Trim(),
+                Description = DescriptionEditor.Text?.Trim() ?? string.Empty,
                 DistinguishingFeatures =
                     FeaturesEntry.Text?.Trim() ?? string.Empty,
                 ReportedByStudentID = 1
             };
 
-            // New ValidationService check
-            if (!_validationService.ValidateLostReport(
-                    report,
-                    out string errorMessage))
-            {
-                ValidationLabel.Text = errorMessage;
-                ValidationLabel.IsVisible = true;
-                return;
-            }
 
-            ValidationLabel.IsVisible = false;
-
-            // Save only after validation succeeds
             try
             {
-                _data.AddLostReport(report);
+                if (!_data.TrySubmitLostReport(report, out string errorMessage))
+                {
+                    ValidationLabel.Text = errorMessage;
+                    ValidationLabel.IsVisible = true;
+                    return;
+                }
+                ValidationLabel.IsVisible = false;
             }
             catch (Exception error)
                 when (error is IOException or UnauthorizedAccessException)

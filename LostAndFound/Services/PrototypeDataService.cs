@@ -29,6 +29,22 @@ public class PrototypeDataService
         _nextFoundId = checked(FoundReports.Select(r => r.ID).DefaultIfEmpty(0).Max() + 1);
     }
 
+    // Form submissions validate before assigning IDs, mutating collections or touching storage.
+    public bool TrySubmitLostReport(LostItemReport? report, out string errorMessage)
+    {
+        if (!new ValidationService().ValidateLostReport(report, out errorMessage)) return false;
+        AddLostReport(report!);
+        return true;
+    }
+
+    public bool TrySubmitFoundReport(FoundItemReport? report, out string errorMessage)
+    {
+        if (!new ValidationService().ValidateFoundReport(report, out errorMessage)) return false;
+        AddFoundReport(report!);
+        return true;
+    }
+
+    // Low-level insertion remains available for controlled fixtures and existing callers.
     public void AddLostReport(LostItemReport report)
     {
         ArgumentNullException.ThrowIfNull(report);
