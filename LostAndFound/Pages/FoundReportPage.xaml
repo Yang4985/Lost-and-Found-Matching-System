@@ -37,7 +37,7 @@
                 <Label x:Name="PhotoLabel" Text="No image selected"/>
 <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
 
-                        
+
                 <VerticalStackLayout Spacing="3" Grid.Column="0"><Entry x:Name="ItemNameEntry" Placeholder="Item name *" PlaceholderColor="#8D8D96" TextColor="White" SemanticProperties.Description="Item name *"/>
 
                         <Label x:Name="ItemNameEntryError" IsVisible="False" TextColor="#FF9EAA"/></VerticalStackLayout><VerticalStackLayout Spacing="3" Grid.Column="1"><Picker x:Name="CategoryPicker" Title="Category *" TitleColor="#8D8D96" TextColor="White" SemanticProperties.Description="Category *"/>

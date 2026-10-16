@@ -6,6 +6,8 @@ The final workflow builds on the integrated main revision and the 18-instance ag
 
 Staff approves or rejects a compatible suggested pair with a reason. Approval reserves both reports as Matched. Staff records private claimant evidence, approves or rejects ownership, records handover and closes the reports. Review, claim, return and closure changes persist with actor, reason and UTC history in the same atomic snapshot. A failed write restores prior states and collections. Duplicate actions and handover before approved ownership are rejected. Rejected matches do not reappear. Private queries and staff changes require the demo staff session. Public listing records omit claim and claimant information.
 
+Reporting forms also show each mandatory-field error beside its input, retain the aggregate message, and preserve input for correction. Photo validation errors are caught and shown without leaving the form.
+
 Native search combines name, category, status, inclusive dates and location. Optional PNG/JPEG images are copied under unique names, limited to five MB and retained by path in item storage. Existing snapshots remain compatible.
 
 ## Verification
